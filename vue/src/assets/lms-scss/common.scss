@@ -1,0 +1,198 @@
+@import "variable";
+
+/* font */
+@font-face{
+  font-family:'Pretendard';
+  font-weight:100;
+  src:url('../lms-font/Pretendard-Thin.woff2') format('woff2')
+}
+@font-face{
+  font-family:'Pretendard';
+  font-weight:300;
+  src:url('../lms-font/Pretendard-Light.woff2') format('woff2')
+}
+@font-face{
+  font-family:'Pretendard';
+  font-weight:400;
+  src:url('../lms-font/Pretendard-Regular.woff2') format('woff2')
+}
+@font-face{
+  font-family:'Pretendard';
+  font-weight:500;
+  src:url('../lms-font/Pretendard-Medium.woff2') format('woff2')
+}
+@font-face{
+  font-family:'Pretendard';
+  font-weight:600;
+  src:url('../lms-font/Pretendard-Bold.woff2') format('woff2')
+}
+@font-face{
+  font-family:'Pretendard';
+  font-weight:700;
+  src:url('../lms-font/Pretendard-ExtraBold.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../lms-font/icon.woff2') format('woff2');
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+/* font */
+
+
+
+
+
+html {
+  font-size: 10px ;
+  height: 100%;
+}
+
+body {
+  /*min-width:128rem; */
+  height: 100%;
+  overflow: auto;
+  font: 400 1.5rem/1 "Pretendard";  
+  background: #f0f5f9;
+}
+body * {letter-spacing:0;}
+
+.wrap {
+  height: 100%;
+  color: #595959;
+}
+
+.inner {
+  width: 100%;  
+}
+
+main .inner {
+  max-width: 140rem;
+  width: 100%;
+}
+
+.blind {
+  font-size: 0;
+  line-height: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hidden {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+.tl {
+  text-align: left;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clear::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.abs {
+  position: absolute;
+}
+
+.rel {
+  position: relative;
+}
+
+.fix {
+  position: fixed;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.inline-m {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+.block {
+  display: block;
+}
+
+*[class*=flex__], .flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+*[class*=__d] {
+  justify-content: space-between;
+}
+
+*[class*=__s] {
+  justify-content: flex-start;
+}
+
+*[class*=__e] {
+  justify-content: flex-end;
+}
+
+*[class*=__c] {
+  justify-content: center;
+}
+
+*[class*=__t] {
+  align-items: flex-start;
+}
+
+*[class*=__m] {
+  align-items: center;
+}
+
+*[class*=__b] {
+  align-items: flex-end;
+}
+
+*[class*=grid__], .grid {
+  display: grid;
+}
+
+.cl1 {color:$cl1;} 
+.w100 {width:100%;}
+.mgr10 {margin-right:1rem;}
+.mgl10 {margin-left:1rem;}
+.mgt10 {margin-top:1rem;}
+.mgb10 {margin-bottom:1rem;}

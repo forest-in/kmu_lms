@@ -1,0 +1,416 @@
+header .top {
+  width: 100%;
+  height: 8.8rem;
+  padding: 1.5rem 2rem;
+  color: #fff;
+  font-weight: 400;
+  background: #002844;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+header .top .logo img {
+  width: 8.6rem;
+}
+header .top .t-menu li {
+  margin-left: 2rem;
+}
+header .top .t-menu li a {
+  transition: all 0.2s ease;
+}
+header .top .t-menu li a:hover {
+  color: #89f3d6;
+}
+header .top .t-menu li a .material-symbols-outlined {
+  font-size: 3rem;
+}
+header .top .t-menu li a i {
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 2rem;
+  height: 2rem;
+  background: #89f3d6;
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2rem;
+  border-radius: 50%;
+}
+header .top .t-menu li.logout {
+  margin-left: 5.5rem;
+}
+header .top .t-menu li.logout button {
+  padding: 0.8rem 1.8rem;
+  color: #111;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 0.5rem;
+}
+
+.container {
+  padding: 3.5rem 1.5rem;
+  grid-template-rows: 100% 100%;
+  transition: all 0.2s ease;
+}
+.container aside {
+  display: none;
+  height: 100%;
+  min-height: calc(100vh - 8.8rem);
+  background: #fff;
+  border: 0.1rem solid #ededed;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+.container aside .ta {
+  padding: 4rem 0 3rem;
+}
+.container aside .ta .u-logo {
+  width: 76%;
+  max-width: 18rem;
+}
+.container aside .ta .u-logo img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.container aside .ta .user {
+  margin-top: 3rem;
+  padding: 0 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.container aside .ta .user strong {
+  font-size: 1.8rem;
+}
+.container aside #gnb li a {
+  display: block;
+  padding: 1.5rem 3.5rem 1.5rem 5rem;
+  font-size: 1.5rem;
+}
+.container aside #gnb > ul > li > a {
+  padding-left: 3.5rem;
+}
+
+main {
+  min-height: calc(100vh - 8.8rem);
+  padding: 7rem 5rem;
+  border: 0.1rem solid #ededed;
+  border-radius: 0.5rem;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+main section h1.tit {
+  margin-bottom: 5rem;
+  font-size: 3.8rem;
+  font-weight: 600;
+  color: #002844;
+}
+main select, main input:not([type=radio]):not([type=checkbox]), main button {
+  padding: 0 1.5rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  line-height: 4rem;
+  border: 0.1rem solid #eee;
+  border-radius: 0.5rem;
+}
+main button {
+  color: #fff;
+  border: 0.1rem solid #002844;
+  background: #002844;
+  line-height: 1;
+}
+main select {
+  position: relative;
+  padding-right: 3.5rem;
+  background: url("../img/arrow.png") no-repeat right 1rem center;
+}
+main select.t2 {
+  background-color: #f0f5f9;
+}
+main input[type=file] {
+  padding: 0 !important;
+  border: none !important;
+}
+main .chk {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  border: 1px solid #002844;
+  cursor: pointer;
+}
+main .chk input {
+  width: 2rem;
+  height: 2rem;
+}
+main .chk i {
+  display: block;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: -0.1rem;
+  left: -0.1rem;
+}
+main .chk input:checked + i {
+  background: url("../img/check.png") no-repeat center;
+}
+main .rad {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  line-height: 3rem;
+}
+main .rad i {
+  display: inline-block;
+  position: relative;
+  vertical-align: sub;
+  margin-right: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #002844;
+  border-radius: 50%;
+}
+main .rad input:checked + i::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 0.4rem;
+  left: 0.4rem;
+  background: #002844;
+  border-radius: 50%;
+}
+main .rad input:checked + i + span {
+  color: #002844;
+  font-weight: 500;
+}
+
+.board-box table {
+  width: 100%;
+  margin-top: 3rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+.board-box table th {
+  position: relative;
+  padding: 2rem 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #004779;
+  border-bottom: 0.2rem solid #004779;
+}
+.board-box table td {
+  padding: 1.5rem 0.5rem;
+  border-bottom: 0.1rem solid #004779;
+}
+.board-box table td.tit {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.board-box table td.num {
+  font-size: 1.4rem;
+  color: #777;
+}
+.board-box table td button {
+  color: #fff;
+  border: 0.1rem solid #002844;
+  border-radius: 1.5rem;
+  background: #002844;
+}
+.board-box table td button.t2 {
+  background: #fff;
+  border-color: #002844;
+  color: #004779;
+  font-weight: 500;
+}
+.board-box table td button.t3 {
+  background: #89f3d6;
+  border-color: #89f3d6;
+  color: #111;
+  font-weight: 500;
+}
+.board-box table td.empty {
+  padding: 15rem 0;
+}
+.board-box .ea {
+  margin-top: 5rem;
+}
+.board-box .ea .la > * {
+  margin-right: 1rem;
+}
+.board-box .ea .ra {
+  margin-left: 1rem;
+}
+.board-box .ea select, .board-box .ea button {
+  min-width: 15rem;
+}
+.board-box.board-list th::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 0.75rem);
+  width: 0.1rem;
+  height: 1.5rem;
+  color: #002844;
+  background: #002844;
+}
+.board-box.board-list td select {
+  height: 3rem;
+  line-height: 3rem;
+}
+.board-box.board-list td button {
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1.4rem;
+}
+.board-box.board-list .pagination {
+  margin-top: 7rem;
+}
+.board-box.board-list .pagination li {
+  margin: 0 0.5rem;
+}
+.board-box.board-list .pagination li a {
+  display: block;
+  padding: 0.5rem;
+  line-height: 2.4rem;
+}
+.board-box.board-list .pagination li:hover {
+  color: #89f3d6;
+}
+.board-box.board-list .pagination .ar a {
+  padding: 0;
+}
+.board-box.board-list .pagination .ar a span {
+  margin-top: 0.1rem;
+}
+.board-box.board-write table {
+  border-top: 0.1rem solid #d1dbe1;
+}
+.board-box.board-write th, .board-box.board-write td {
+  border-color: #d1dbe1;
+}
+.board-box.board-write th {
+  border-width: 0.1rem;
+  background-color: #f7f8f9;
+}
+.board-box.board-write td {
+  padding: 1.5rem 2rem;
+}
+.board-box.board-write td .rad {
+  margin-right: 2.5rem;
+}
+.board-box.board-view .bv-tit, .board-box.board-view .bv-con {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  border-bottom: 0.1rem solid #d1dbe1;
+}
+.board-box.board-view .bv-tit {
+  padding-bottom: 3rem;
+}
+.board-box.board-view .bv-tit h2 {
+  font-size: 2.5rem;
+}
+.board-box.board-view .bv-tit .t2 {
+  margin-top: 0.5rem;
+}
+.board-box.board-view .bv-tit .t2 span {
+  opacity: 0.7;
+  letter-spacing: 0.05rem;
+}
+.board-box.board-view .bv-tit .t2 span::after {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 0.1rem;
+  height: 1.5rem;
+  background: #ccc;
+  margin: 0.7rem 1.5rem 0;
+}
+.board-box.board-view .bv-tit .t2 span:last-child::after {
+  display: none;
+}
+.board-box.board-view .bv-con {
+  padding: 6rem 0 12rem;
+}
+.board-box.board-view .bv-list {
+  margin-top: 10rem;
+}
+.board-box.board-view .bv-list .b-prev .t1::after, .board-box.board-view .bv-list .b-next .t1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 1rem;
+  top: calc(50% - 0.8rem);
+  width: 0.1rem;
+  height: 1.6rem;
+  background: #ddd;
+}
+
+.index .sct1 {
+  margin-top: 3rem;
+}
+.index .sct1 .search-box > * {
+  margin-left: 1rem;
+}
+
+@media (min-width: 1500px) {
+  .container {
+    grid-template-columns: 25rem auto;
+  }
+  .container aside {
+    display: block;
+  }
+  .container main {
+    margin-left: 1.5rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .container {
+    grid-template-columns: 20rem auto;
+  }
+  .container aside {
+    display: block;
+  }
+  .container main {
+    margin-left: 1.5rem;
+  }
+}
+@media (min-width: 960px) and (max-width: 1199px) {
+  .container {
+    grid-template-columns: 18rem auto;
+  }
+  .container aside {
+    display: block;
+  }
+  .container main {
+    margin-left: 1.5rem;
+  }
+}
+@media (min-width: 720px) and (max-width: 959px) {
+  body {
+    background: pink;
+  }
+}
+@media (min-width: 540px) and (max-width: 719px) {
+  body {
+    background: gray;
+  }
+  .m-mt10 {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 0) and (max-width: 539px) {
+  body {
+    background: orange;
+  }
+  .m-mt10 {
+    margin-top: 1rem;
+  }
+}
