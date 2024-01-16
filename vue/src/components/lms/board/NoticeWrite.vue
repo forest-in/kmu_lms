@@ -68,7 +68,15 @@
             <tr>
               <th>첨부파일</th>
               <td colspan="3">
-                <input type="file" id="files" multiple>
+                <div id="filePicker">
+                  <input type="file" ref="file-btn" multiple @change="change()" />
+                  <div>
+                    <p>List of selected files:</p>
+                    <ul ref="file-list">
+                      <li></li> 
+                    </ul>
+                  </div>
+                </div>                
               </td>
             </tr>
           </table>
@@ -94,9 +102,40 @@
 </template>
 
 <script>
-export default{
-    
+
+
+// const output = document.getElementById("output");
+// const filepicker = document.getElementById("filepicker");
+
+// filepicker.addEventListener("change", (event) => {
+//   const files = event.target.files;
+//   output.textContent = "";
+
+//   for (const file of files) {
+//     const li = document.createElement("li");
+//     li.textContent = file.name;
+//     output.appendChild(li);
+//   }
+// });
+
+export default {
+  data() {
+    return {
+      //file: '',
+    }
+  },
+  methods: {
+    // change (){
+    //   console.log(this.$refs.file-btn)
+    //   console.log(this.$refs.file-list)
+    // }
+    // fileChange(e) {
+    //   console.log(e.target.files);
+    //   this.file = e.target.files[0];
+    // }
+  }
 }
+
 </script>
 
 <style scoped>
