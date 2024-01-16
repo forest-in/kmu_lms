@@ -2,7 +2,7 @@
   <div class="container grid">      
     <lms-aside />
     <main>
-      <router-view :key="$route.fullPath" />
+      <router-view />
     </main>
   </div><!-- //container end -->
 </template>
