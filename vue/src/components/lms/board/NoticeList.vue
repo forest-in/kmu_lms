@@ -5,7 +5,7 @@
       <div class="board-box board-list tc">            
         <form id="search" name="search" action="" method="">
           <div class="search-box flex__e__m">
-            <VueDatePicker v-model="date"></VueDatePicker>
+            <VueDatePicker v-model="date" range locale="ko" />
             <select name="" id="">
               <option value="제목">제목</option>
               <option value="등록일">등록일</option>
@@ -83,10 +83,21 @@
 
 
 <script>
-import VueDatePicker from '/node_modules/@vuepic/vue-datepicker';
-import '/node_modules/@vuepic/vue-datepicker/dist/main.css';
+import { ref, onMounted } from 'vue';
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+
+
+
+const date = ref();
+onMounted(() => {
+  const startDate = new Date();
+  const endDate = new Date(new Date().setDate(startDate.getDate() + 7));  
+  date.value = [startDate, endDate];
+}) 
+
 export default{
-  components: { VueDatePicker }    
+  components: { VueDatePicker }
 }
 </script>
 
