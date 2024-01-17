@@ -139,6 +139,11 @@ main .inner {
   display: inline-block;
 }
 
+.inline-t {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .inline-m {
   display: inline-block;
   vertical-align: sub;

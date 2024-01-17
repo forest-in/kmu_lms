@@ -4,15 +4,19 @@
       <h1 class="tit">공지사항</h1>
       <div class="board-box board-list tc">            
         <form id="search" name="search" action="" method="">
-          <div class="search-box flex__e__m">
-            <VueDatePicker v-model="date" range locale="ko" />
-            <select name="" id="">
-              <option value="제목">제목</option>
-              <option value="등록일">등록일</option>
-              <option value="등록학교">등록학교</option>
+          <div class="search-box flex__e__m">            
+            <select name="" id=""  @change="selectChange">
+              <option value="title">제목</option>
+              <option value="date">등록일</option>
+              <option value="school">등록학교</option>
             </select>
-            <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력" class="mgl10">
-            <button class="mgl10"><span class="material-symbols-outlined">search</span></button>                
+            <div ref="searchType" :class="{ 'date-show' : dateShow }" class="inline mgl10 search-type">
+              <div class="type1"><VueDatePicker v-model="date" range locale="ko" class="vue-datapicker" /></div>
+              <div class="type2">
+                <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력">
+                <button class="mgl10 inline-t"><span class="material-symbols-outlined">search</span></button>
+              </div>
+            </div>   
           </div>
         </form>
         <div class="seatch-txt tl mgt10">총 <strong class="cl1">5</strong>개의 공지사항이 있습니다.</div>
@@ -96,10 +100,32 @@ onMounted(() => {
   date.value = [startDate, endDate];
 }) 
 
+
 export default{
-  components: { VueDatePicker }
+  components: { VueDatePicker },
+  data() {
+    return {
+      selectedOption: '' // 초기 선택값 설정
+    };
+  },
+  methods: {
+    selectChange(e) {
+      this.selectedOption = e.target.value;
+      console.log(this.selectedOption);
+      if( this.selectedOption ==  'date' ){
+        return {
+          dateShow : true          
+        }
+      }
+      
+    }
+  },
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.vue-datapicker {
+  width:auto;
+}
+
 </style>
