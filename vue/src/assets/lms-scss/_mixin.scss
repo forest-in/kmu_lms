@@ -1,6 +1,10 @@
 @import "variable";
 
 
+// ── Default ──
+
+
+
 // ── Layout ──
 @mixin layoutPC() {
   aside {
@@ -13,9 +17,11 @@
 
 
 // ── transition ──
-@mixin transition ($trans: all .2s ease) {
+@mixin transition($trans: all .2s ease) {
   transition: $trans; 
 }
+
+
 
 
 

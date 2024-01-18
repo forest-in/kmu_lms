@@ -10,14 +10,14 @@
               <option value="date">등록일</option>
               <option value="school">학교</option>
             </select>
-            <div :class="{'option-show':selectedValue === 'date'}" class="inline mgl10 search-type">              
-              <div class="item-date">
+            <div :class="{'option-show':selectedValue === 'date'}" class="search-type inline mgl10 clear">              
+              <div class="item-date fl">
                 <VueDatePicker v-model="date" range locale="ko" :enable-time-picker="false" cancelText="취소" selectText="확인" class="vue-datapicker" />
               </div>
-              <div>
-                <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력">
-                <button class="mgl10 inline-t"><span class="material-symbols-outlined">search</span></button>
+              <div class="fl">
+                <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력">                
               </div>
+              <button class="mgl10 inline-t fr"><span class="material-symbols-outlined">search</span></button>
             </div>   
           </div>
         </form>

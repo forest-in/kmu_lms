@@ -1,5 +1,5 @@
 <template>
-  <nav id="gnb">
+  <!-- <nav id="gnb">
     <ul>
       <li>
         <router-link to="/lms/notice">공지사항</router-link>
@@ -42,16 +42,55 @@
         </ul>
       </li>  
     </ul>
-  </nav>
+  </nav> -->
+  <div>
+    <AccordionGroup :items="menuItems" />
+  </div>
 </template>
 
 <script>
-export default{
-    
-}
+import AccordionGroup from './LmsGnbSub.vue';
 
+export default {
+  components: {
+    AccordionGroup,
+  },
+  data() {
+    return {
+      menuItems: [
+        {
+          title: '공지사항',
+          link: '/lms/notice',
+          subItems: [
+            { title: '목록', link: '/lms/notice' },
+            { title: '등록', link: '/lms/notice/write' },
+            { title: '상세', link: '/lms/notice/view' },
+          ],
+        },
+        {
+          title: 'Top Item 2',
+          link: '/top2',
+          subItems: [
+            { title: 'Sub Item 2-1', link: '/top2/sub1' },
+            { title: 'Sub Item 2-2', link: '/top2/sub2' },
+            { title: 'Sub Item 2-3', link: '/top2/sub3' },
+          ],
+        },
+        {
+          title: 'Top Item 3',
+          link: '/top3',
+          subItems: [
+            { title: 'Sub Item 3-1', link: '/top3/sub1' },
+            { title: 'Sub Item 3-2', link: '/top3/sub2' },
+            { title: 'Sub Item 3-3', link: '/top3/sub3' },
+          ],
+        },
+      ],
+    };
+  },
+};
 </script>
 
-<style scoped lang="scss">
-
+<style scoped>
+/* Your styles for MainMenu */
 </style>

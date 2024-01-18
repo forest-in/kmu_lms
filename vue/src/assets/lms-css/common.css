@@ -1,4 +1,83 @@
-/* font */
+.mgr10 {
+  margin-right: 1rem;
+}
+
+.mgl10 {
+  margin-left: 1rem;
+}
+
+.mgt10 {
+  margin-top: 1rem;
+}
+
+.mgb10 {
+  margin-bottom: 1rem;
+}
+
+.mgr20 {
+  margin-right: 2rem;
+}
+
+.mgl20 {
+  margin-left: 2rem;
+}
+
+.mgt20 {
+  margin-top: 2rem;
+}
+
+.mgb20 {
+  margin-bottom: 2rem;
+}
+
+.mgr30 {
+  margin-right: 3rem;
+}
+
+.mgl30 {
+  margin-left: 3rem;
+}
+
+.mgt30 {
+  margin-top: 3rem;
+}
+
+.mgb30 {
+  margin-bottom: 3rem;
+}
+
+.mgr40 {
+  margin-right: 4rem;
+}
+
+.mgl40 {
+  margin-left: 4rem;
+}
+
+.mgt40 {
+  margin-top: 4rem;
+}
+
+.mgb40 {
+  margin-bottom: 4rem;
+}
+
+.mgr50 {
+  margin-right: 5rem;
+}
+
+.mgl50 {
+  margin-left: 5rem;
+}
+
+.mgt50 {
+  margin-top: 5rem;
+}
+
+.mgb50 {
+  margin-bottom: 5rem;
+}
+
 @font-face {
   font-family: "Pretendard";
   font-weight: 100;
@@ -50,14 +129,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* font */
 html {
   font-size: 10px;
   height: 100%;
 }
 
 body {
-  /*min-width:128rem; */
   height: 100%;
   overflow: auto;
   font: 400 1.5rem/1 "Pretendard";
@@ -79,15 +156,6 @@ body * {
 
 main .inner {
   max-width: 140rem;
-  width: 100%;
-}
-
-.blind {
-  font-size: 0;
-  line-height: 0;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .hidden {
@@ -197,38 +265,6 @@ main .inner {
 
 .w100 {
   width: 100%;
-}
-
-.mgr10 {
-  margin-right: 1rem;
-}
-
-.mgl10 {
-  margin-left: 1rem;
-}
-
-.mgt10 {
-  margin-top: 1rem;
-}
-
-.mgb10 {
-  margin-bottom: 1rem;
-}
-
-.mgr20 {
-  margin-right: 2rem;
-}
-
-.mgl20 {
-  margin-left: 2rem;
-}
-
-.mgt20 {
-  margin-top: 2rem;
-}
-
-.mgb20 {
-  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=common.css.map */

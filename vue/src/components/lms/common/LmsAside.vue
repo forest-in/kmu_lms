@@ -16,7 +16,7 @@ import LmsGnb from '@/components/lms/common/LmsGnb.vue'
 export default {
   name: 'LmsAside',
   components: {
-    LmsGnb
+    LmsGnb,
   }
 }
 </script>

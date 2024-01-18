@@ -290,7 +290,6 @@ main {
     $dh : 2rem;
     .item-date {
       display:none;
-      width:28.3rem;
       .dp__input {
         padding-left:4.5rem;
         font-family: 'Pretendard';
@@ -330,6 +329,9 @@ main {
       .item-date {
         display:block;
       }
+    }
+    input{
+      width:26rem;
     }
   }
   .search-txt {

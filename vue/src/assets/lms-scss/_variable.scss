@@ -22,3 +22,17 @@ $cl3: #f7f7f7;
 // ── Common ──
 $headerH: 8.8rem;
 $url: '../lms-img/';
+
+
+
+$margin-values: 10 20 30 40 50;
+
+
+@each $value in $margin-values {
+  $value-rem: $value * .1rem;
+  
+  .mgr#{$value} { margin-right: $value-rem; }
+  .mgl#{$value} { margin-left: $value-rem; }
+  .mgt#{$value} { margin-top: $value-rem; }
+  .mgb#{$value} { margin-bottom: $value-rem; }
+}
