@@ -5,21 +5,23 @@
       <div class="board-box board-list tc">            
         <form id="search" name="search" action="" method="">
           <div class="search-box flex__e__m">            
-            <select name="" id=""  @change="selectChange">
-              <option value="title">제목</option>
+            <select name="" id="" v-model="selectedValue">
+              <option value="title" selected>제목</option>
               <option value="date">등록일</option>
-              <option value="school">등록학교</option>
+              <option value="school">학교</option>
             </select>
-            <div ref="searchType" :class="{ 'date-show' : dateShow }" class="inline mgl10 search-type">
-              <div class="type1"><VueDatePicker v-model="date" range locale="ko" class="vue-datapicker" /></div>
-              <div class="type2">
+            <div :class="{'option-show':selectedValue === 'date'}" class="inline mgl10 search-type">              
+              <div class="item-date">
+                <VueDatePicker v-model="date" range locale="ko" :enable-time-picker="false" cancelText="취소" selectText="확인" class="vue-datapicker" />
+              </div>
+              <div>
                 <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력">
                 <button class="mgl10 inline-t"><span class="material-symbols-outlined">search</span></button>
               </div>
             </div>   
           </div>
         </form>
-        <div class="seatch-txt tl mgt10">총 <strong class="cl1">5</strong>개의 공지사항이 있습니다.</div>
+        <div class="search-txt tl mgt10">총 <strong class="cl1">5</strong>개의 공지사항이 있습니다.</div>
         <table>
           <colgroup>
             <col style="width:7%;">
@@ -91,35 +93,25 @@ import { ref, onMounted } from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
-
-
-const date = ref();
-onMounted(() => {
-  const startDate = new Date();
-  const endDate = new Date(new Date().setDate(startDate.getDate() + 7));  
-  date.value = [startDate, endDate];
-}) 
-
-
 export default{
   components: { VueDatePicker },
+
+  setup() {
+    const date = ref([]);
+    onMounted(() => {
+      const startDate = new Date();
+      const endDate = new Date(new Date().setDate(startDate.getDate() + 7));
+      date.value = [startDate, endDate];
+    });
+    return {
+      date,
+    };
+  },  
   data() {
     return {
-      selectedOption: '' // 초기 선택값 설정
+      selectedValue: 'title',
     };
-  },
-  methods: {
-    selectChange(e) {
-      this.selectedOption = e.target.value;
-      console.log(this.selectedOption);
-      if( this.selectedOption ==  'date' ){
-        return {
-          dateShow : true          
-        }
-      }
-      
-    }
-  },
+  }
 }
 </script>
 
@@ -127,5 +119,4 @@ export default{
 .vue-datapicker {
   width:auto;
 }
-
 </style>

@@ -71,8 +71,7 @@ header {
     border-radius:.5rem;
     @include transition();
     .ta {
-      padding:4rem 0 3rem;
-      
+      padding:4rem 0 3rem;      
       .u-logo {
         width: 76%;
         max-width:18rem;
@@ -154,23 +153,22 @@ main {
   .chk {
     $cw : 2rem;
     display: inline-block;
-    position: relative;    
-    width: $cw;
-    height: $cw;
+    position: relative;
     vertical-align: middle;
-    border: 1px solid $tm2;
     cursor: pointer;
     input {
       width: $cw;
       height: $cw;
+      vertical-align: sub;
+      border: 1px solid $cl2;
     }
     i {      
       display: block;
       position: absolute;
       width: $cw;
       height: $cw;
-      top:-.1rem;
-      left:-.1rem;
+      top:0;
+      left:0;
     }   
     input:checked + i{
       background:url($url+'check.png') no-repeat center;
@@ -189,7 +187,7 @@ main {
       margin-right:.7rem;
       width: $cw;
       height: $cw;
-      border: 1px solid $tm2;
+      border: 1px solid $cl2;
       border-radius: 50%;
     }   
     input:checked + i::after{
@@ -255,6 +253,7 @@ main {
       }  
       button {        
         color: $wh;
+        height:3rem;
         border: .1rem solid $tm2;
         border-radius: 1.5rem;
         background: $tm2;
@@ -270,13 +269,70 @@ main {
           color: $bk;
           font-weight: 500;
         }
-      }
+        &.file-del {
+          height:2rem;
+          width:2rem;
+          vertical-align:middle;
+          padding:0;          
+          font-size:1rem;          
+          .material-symbols-outlined {
+            font-size:1.5rem;
+            line-height:1.9rem;
+          }
+        }
+      }      
       &.empty {
         padding:15rem 0;
       }
     }    
   }
-  .seatch-txt {
+  .search-type {
+    $dh : 2rem;
+    .item-date {
+      display:none;
+      width:28.3rem;
+      .dp__input {
+        padding-left:4.5rem;
+        font-family: 'Pretendard';
+        color:#636363;
+      }
+      .dp__icon {
+        width: $dh;
+        height: $dh;
+      }
+      .dp__instance_calendar  {
+        font-size: 1.5rem;
+        line-height:1.5;
+        button {
+          padding:0;
+        }
+        .dp__action_buttons button {
+          width:5rem;
+          padding:0 !important;
+          text-align:center;
+          justify-content: center;
+        }
+      }
+      .dp__selection_preview {
+        font-size: 1.2rem;
+        line-height:1.2;
+      }
+      .dp__action_button {
+        width:5rem;
+        font-size:1.2rem;
+        justify-content: center;
+      }
+    }
+    &.option-show {
+      > div {
+        display:none;
+      }
+      .item-date {
+        display:block;
+      }
+    }
+  }
+  .search-txt {
     padding:1rem 0;
     font-size:1.7rem;
   }
@@ -285,11 +341,16 @@ main {
     .la > * {
       margin-right:1rem;
     }
-    .ra {
+    .ra > * {
       margin-left:1rem;
     }
     select, button {
       min-width:15rem;
+    }
+    .t2 {
+      color: $tm2;
+      background:$wh;
+      font-weight:500;
     }
   }
   &.board-list {
@@ -315,9 +376,7 @@ main {
         height: $dh;
         line-height: $dh;
       }
-      button {
-        $btnH :$dh;
-        height: $btnH;
+      button {        
         padding: 0 1.5rem;
         font-size: 1.4rem;
       }
@@ -389,6 +448,12 @@ main {
       font-size: 1.8rem;
       line-height: 1.6;
       border-bottom: .1rem solid $cl2;      
+    }
+    .bv-file {
+      padding:1.5rem;
+      line-height:2.4rem;
+      background: $cl3;
+      border-bottom: .1rem solid $cl2;
     }
     .bv-tit {      
       padding-bottom: 3rem;

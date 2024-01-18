@@ -134,23 +134,22 @@ main input[type=file] {
 main .chk {
   display: inline-block;
   position: relative;
-  width: 2rem;
-  height: 2rem;
   vertical-align: middle;
-  border: 1px solid #002844;
   cursor: pointer;
 }
 main .chk input {
   width: 2rem;
   height: 2rem;
+  vertical-align: sub;
+  border: 1px solid #d1dbe1;
 }
 main .chk i {
   display: block;
   position: absolute;
   width: 2rem;
   height: 2rem;
-  top: -0.1rem;
-  left: -0.1rem;
+  top: 0;
+  left: 0;
 }
 main .chk input:checked + i {
   background: url("../lms-img/check.png") no-repeat center;
@@ -168,7 +167,7 @@ main .rad i {
   margin-right: 0.7rem;
   width: 2rem;
   height: 2rem;
-  border: 1px solid #002844;
+  border: 1px solid #d1dbe1;
   border-radius: 50%;
 }
 main .rad input:checked + i::after {
@@ -227,6 +226,7 @@ main .rad input:checked + i + span {
 }
 .board-box table td button {
   color: #fff;
+  height: 3rem;
   border: 0.1rem solid #002844;
   border-radius: 1.5rem;
   background: #002844;
@@ -243,10 +243,62 @@ main .rad input:checked + i + span {
   color: #111;
   font-weight: 500;
 }
+.board-box table td button.file-del {
+  height: 2rem;
+  width: 2rem;
+  vertical-align: middle;
+  padding: 0;
+  font-size: 1rem;
+}
+.board-box table td button.file-del .material-symbols-outlined {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+}
 .board-box table td.empty {
   padding: 15rem 0;
 }
-.board-box .seatch-txt {
+.board-box .search-type .item-date {
+  display: none;
+  width: 28.3rem;
+}
+.board-box .search-type .item-date .dp__input {
+  padding-left: 4.5rem;
+  font-family: "Pretendard";
+  color: #636363;
+}
+.board-box .search-type .item-date .dp__icon {
+  width: 2rem;
+  height: 2rem;
+}
+.board-box .search-type .item-date .dp__instance_calendar {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.board-box .search-type .item-date .dp__instance_calendar button {
+  padding: 0;
+}
+.board-box .search-type .item-date .dp__instance_calendar .dp__action_buttons button {
+  width: 5rem;
+  padding: 0 !important;
+  text-align: center;
+  justify-content: center;
+}
+.board-box .search-type .item-date .dp__selection_preview {
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+.board-box .search-type .item-date .dp__action_button {
+  width: 5rem;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+.board-box .search-type.option-show > div {
+  display: none;
+}
+.board-box .search-type.option-show .item-date {
+  display: block;
+}
+.board-box .search-txt {
   padding: 1rem 0;
   font-size: 1.7rem;
 }
@@ -256,11 +308,16 @@ main .rad input:checked + i + span {
 .board-box .ea .la > * {
   margin-right: 1rem;
 }
-.board-box .ea .ra {
+.board-box .ea .ra > * {
   margin-left: 1rem;
 }
 .board-box .ea select, .board-box .ea button {
   min-width: 15rem;
+}
+.board-box .ea .t2 {
+  color: #002844;
+  background: #fff;
+  font-weight: 500;
 }
 .board-box.board-list th::before {
   content: "";
@@ -281,7 +338,6 @@ main .rad input:checked + i + span {
   line-height: 3rem;
 }
 .board-box.board-list td button {
-  height: 3rem;
   padding: 0 1.5rem;
   font-size: 1.4rem;
 }
@@ -345,6 +401,12 @@ main .rad input:checked + i + span {
 .board-box.board-view .bv-tit, .board-box.board-view .bv-con {
   font-size: 1.8rem;
   line-height: 1.6;
+  border-bottom: 0.1rem solid #d1dbe1;
+}
+.board-box.board-view .bv-file {
+  padding: 1.5rem;
+  line-height: 2.4rem;
+  background: #f7f7f7;
   border-bottom: 0.1rem solid #d1dbe1;
 }
 .board-box.board-view .bv-tit {

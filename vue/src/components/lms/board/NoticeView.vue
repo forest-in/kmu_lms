@@ -8,8 +8,17 @@
             <div class="bv-tit">
               <h2>24학년도 1학기 수강신청 내역 반영 일정</h2>
               <div class="flex t2">
-                <span class="inline">2024. 01 .12</span><span class="inline">관리자</span>
+                <span class="inline">홍길동</span>
+                <span class="inline">2024. 01 .12
+                  <span class="material-symbols-outlined inline-m">schedule</span>10:10
+                </span>                
               </div>
+            </div>
+            <div class="bv-file tr">
+              <a href="path/to/your/file.txt" download="filename.txt" class="flex__d__e">
+                <span class="inline mgr10">첨부파일</span>
+                <span class="material-symbols-outlined">download</span>
+              </a>
             </div>
             <div class="bv-con">
               교수학습개발센터에서는 10월의 마지막 날에 2023-2학기 마지막 학습법 특강으로<br>
