@@ -36,7 +36,7 @@
         </div>
         <div class="ea">
           <div class="tc">
-            <button type="button">목록</button>
+            <button type="button" onclick="history.back()">목록</button>
           </div>
           <div class="bv-list">
             <table>
@@ -47,12 +47,16 @@
               </colgroup>
               <tr class="b-prev">
                 <td class="t1 rel">이전글</td>
-                <td class="tl tit"><a href="">2024년 1월 신설된 강의 목록입니다.</a></td>
+                <td class="tl tit">
+                  <router-link to="/lms/notice/view">2024년 1월 신설된 강의 목록입니다.</router-link>
+                </td>
                 <td class="num tr">2024.01.01</td>
               </tr>
               <tr class="b-next">
                 <td class="t1 rel">다음글</td>
-                <td class="tl tit"><a href="">2024년 1월 신설된 강의 목록입니다.</a></td>
+                <td class="tl tit">
+                  <router-link to="/lms/notice/view">2024년 1월 신설된 강의 목록입니다.</router-link>
+                </td>
                 <td class="num tr">2024.01.01</td>
               </tr>
             </table>

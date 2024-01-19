@@ -12,7 +12,7 @@
             </select>
             <div :class="{'option-show':selectedValue === 'date'}" class="search-type inline mgl10 clear">              
               <div class="item-date fl">
-                <VueDatePicker v-model="date" range locale="ko" :enable-time-picker="false" cancelText="취소" selectText="확인" class="vue-datapicker" />
+                <vue-date-picker v-model="date" range locale="ko" :enable-time-picker="false" cancelText="취소" selectText="확인" class="vue-datapicker" />
               </div>
               <div class="fl">
                 <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력">                
@@ -43,7 +43,10 @@
           <tr>
             <td><label class="chk"><input type="checkbox"><i></i></label></td>
             <td class="num">2</td>
-            <td class="tl tit"><a href="">2024년 1월 신설된 강의 목록입니다. </a> <span class="material-symbols-outlined">attach_file</span></td>
+            <td class="tl tit">
+              <router-link to="/lms/notice/view">2024년 1월 신설된 강의 목록입니다.</router-link>
+              <span class="material-symbols-outlined">attach_file</span>
+            </td>
             <td class="cl1 bold">국민대학교</td>
             <td class="num">2024.01.01</td>
             <td class="num">112</td>
@@ -51,7 +54,9 @@
           <tr>
             <td><label class="chk"><input type="checkbox"><i></i></label></td>
             <td class="num">1</td>
-            <td class="tl tit"><a href="">2024년 1월 신설된 강의 목록입니다.</a></td>
+            <td class="tl tit">
+              <router-link to="/lms/notice/view">2024년 1월 신설된 강의 목록입니다.2024년 1월 신설된 강의 목록입니다.2024년 1월 신설된 강의 목록입니다.2024년 1월 신설된 강의 목록입니다.</router-link>
+            </td>
             <td class="cl1 bold">한국어대학교 서울캠퍼스</td>
             <td class="num">2024.01.01</td>
             <td class="num">112</td>
@@ -63,10 +68,12 @@
         </table>
         <div class="ea flex__d__m">
           <div class="la flex__s__m">
-            <button type="button">삭제</button>
+            <button type="button" @click="openPopup('popup1', 'Popup Content 1')">삭제</button>
           </div>
           <div class="ra flex__e__m">
-            <button type="button">등록</button>
+            <router-link to="/lms/notice/write">
+              <button type="button">등록</button>
+            </router-link>
           </div>              
         </div>
         <div class="pagination">
@@ -90,12 +97,9 @@
 
 <script>
 import { ref, onMounted } from 'vue';
-import VueDatePicker from '@vuepic/vue-datepicker';
-import '@vuepic/vue-datepicker/dist/main.css';
+
 
 export default{
-  components: { VueDatePicker },
-
   setup() {
     const date = ref([]);
     onMounted(() => {

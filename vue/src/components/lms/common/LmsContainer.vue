@@ -10,10 +10,11 @@
 <script>
 import LmsAside from '@/components/lms/common/LmsAside.vue'
 
+
 export default {
   name: 'LmsContainer',
   components: {
-    LmsAside
+    LmsAside    
   }
 }
 </script>

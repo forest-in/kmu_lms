@@ -63,20 +63,23 @@
                 2024-01-25 12:00  
               </td>
             </tr>
-            
-            
-            
           </table>
         </form>
         
         <div class="ea flex__d__m">
           <div class="la flex__s__m">
             <button type="button">삭제</button>
-            <button type="button" class="t2">취소</button>
+            <router-link to="/lms/notice">
+              <button type="button" class="t2">취소</button>
+            </router-link>
           </div>
           <div class="ra flex__e__m">
-            <button type="button">등록</button>
-            <button type="button">수정</button>            
+            <router-link to="/lms/notice">
+              <button type="button">등록</button>
+            </router-link>
+            <router-link to="/lms/notice">
+              <button type="button">수정</button>            
+            </router-link>
           </div>              
         </div>
 

@@ -1,4 +1,3 @@
-<!-- AccordionGroup.vue -->
 <template>
   <ul>
     <AccordionItem
