@@ -9,8 +9,6 @@
 <script>
 import LmsHeader from '@/components/lms/common/LmsHeader.vue'
 import LmsContainer from '@/components/lms/common/LmsContainer.vue'
-import LmsPopup from '@/components/lms/popup/LmsModal.vue'
-
 
 
 
@@ -21,12 +19,8 @@ export default {
   },
   components: {
     LmsHeader,
-    LmsContainer,
-    LmsPopup
-  },
+    LmsContainer
+    
+  }
 }
 </script>
-
-
-<style scoped>
-</style>

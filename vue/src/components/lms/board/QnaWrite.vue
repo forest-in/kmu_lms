@@ -1,7 +1,7 @@
 <template>
   <section class="sct1">
     <div class="inner">
-      <h1 class="tit">공지사항</h1>
+      <h1 class="tit">Q & A</h1>
       <div class="board-box board-write">
         <form id="inquiry" name="inquiry" method="" action="">
           <table>
@@ -12,46 +12,12 @@
               <col style="width:35%;">
             </colgroup>
             <tr>
-              <th>카테고리</th>
-              <td colspan="3">                  
-                <label class="rad t2"><input type="radio" name="cat"><i></i><span>카테고리1</span></label>
-                <label class="rad t2"><input type="radio" name="cat"><i></i><span>카테고리2</span></label>
-                <label class="rad t2"><input type="radio" name="cat"><i></i><span>카테고리3</span></label>
-                <label class="rad t2"><input type="radio" name="cat"><i></i><span>카테고리4</span></label>
-              </td>
+              <th>이름</th>
+              <td colspan="3">김홍길동길동</td>
             </tr>
             <tr>
-              <th>비밀글</th>
-              <td>                    
-                <label class="chk"><input type="checkbox"><i></i></label>
-              </td>
-              <th>비밀번호</th>
-              <td>                    
-                <input type="password" placeholder="" class="w100">
-              </td>
-            </tr>
-            <tr>
-              <th>선택</th>
-              <td colspan="3">                  
-                <select name="" id="" class="w50 mgr10">
-                  <option value="1">선택1</option>
-                  <option value="2">선택2</option>
-                  <option value="3">선택3</option>
-                  <option value="4">선택4</option>
-                </select>
-                <select name="" id="" class="w50 mgr10">
-                  <option value="1" selected>선택을하세요1</option>
-                  <option value="2">선택을하세요2</option>
-                  <option value="3">선택을하세요3</option>
-                  <option value="4">선택을하세요4</option>
-                </select>
-                <select name="" id="" class="w50 m-mt10">
-                  <option value="1">최종선택을하세요1</option>
-                  <option value="2" selected>최종선택을하세요2</option>
-                  <option value="3">최종선택을하세요3</option>
-                  <option value="4">최종선택을하세요4</option>
-                </select>
-              </td>
+              <th>강의</th>
+              <td colspan="3">화폐금융론 (0028301-81)</td>
             </tr>
             <tr>
               <th>제목</th>
@@ -60,31 +26,19 @@
             <tr>
               <th>내용</th>
               <td colspan="3">
-                <div class="tc" style="padding: 20rem 0;">
-                  에디터 삽입
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>첨부파일</th>
-              <td colspan="3">
-                <input type="file" id="files" multiple>
+                <textarea name="" id="" class="w100" placeholder="내용을 입력해주세요."></textarea>    
               </td>
             </tr>
           </table>
-        </form>
-        
+        </form>        
         <div class="ea flex__d__m">
           <div class="la flex__s__m">
-            <select name="" id="">
-              <option value="1">옵션1</option>
-              <option value="2">옵션2</option>
-            </select>
-            <button type="button">삭제하기</button>
-            <button type="button">수정하기</button>
+            <button @click="$router.push('/lms/qna'); openPopup('popupDel-3')" type="button" class="ty2">삭제</button>
+            <button @click="$router.push('/lms/qna')" type="button" class="ty2">취소</button>
           </div>
           <div class="ra flex__e__m">
-            <button type="button">확인</button>
+            <button @click="$router.push('/lms/qna'); openPopup('popupReg')" type="button">등록</button>
+            <button @click="$router.push('/lms/qna/view'); openPopup('popupEdit')" type="button">수정</button>
           </div>              
         </div>
 
@@ -94,10 +48,19 @@
 </template>
 
 <script>
-export default{
-    
+export default {
+  data() {
+    return {
+      files: []
+    }
+  },
+  methods: {
+    handleFileChange(event) {
+      this.files = Array.from(event.target.files);
+    },
+    removeFile(index) {
+      this.files.splice(index, 1);
+    }
+  }
 }
 </script>
-
-<style scoped>
-</style>

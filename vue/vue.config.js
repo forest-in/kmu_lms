@@ -1,5 +1,16 @@
 module.exports = {
-  publicPath: './',
-  assetsDir: './', 
-  
+  // publicPath: './',
+  // assetsDir: './',
+
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+          @import '@/assets/lms-scss/variable.scss';
+        `
+      }
+    }
+  }
+
+
 }

@@ -1,6 +1,6 @@
 <template>
   <nav id="gnb">
-    <AccordionGroup :items="menuItems" />
+    <accordion-group :items="menuItems" />
   </nav>
 </template>
 

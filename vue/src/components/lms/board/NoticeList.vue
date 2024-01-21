@@ -21,7 +21,7 @@
             </div>   
           </div>
         </form>
-        <div class="search-txt tl mgt10">총 <strong class="cl1">5</strong>개의 공지사항이 있습니다.</div>
+        <div class="search-txt tl mgt10">총 <strong class="cl1">5</strong>개의 게시글이 있습니다.</div>
         <table>
           <colgroup>
             <col style="width:7%;">
@@ -36,10 +36,9 @@
             <th>번호</th>
             <th>제목</th>
             <th>학교명</th>
-            <th>등록일</th>
+            <th>작성일</th>
             <th>조회수</th>
           </tr>
-
           <tr>
             <td><label class="chk"><input type="checkbox"><i></i></label></td>
             <td class="num">2</td>
@@ -61,32 +60,29 @@
             <td class="num">2024.01.01</td>
             <td class="num">112</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <td colspan="7" class="empty">등록된 게시글이 없습니다.</td>                
-          </tr>
-
+          </tr> -->
         </table>
         <div class="ea flex__d__m">
           <div class="la flex__s__m">
-            <button type="button" @click="openPopup('popup1', 'Popup Content 1')">삭제</button>
+            <button @click="openPopup('popupDel-2')" type="button" class="ty2">삭제</button>
           </div>
           <div class="ra flex__e__m">
-            <router-link to="/lms/notice/write">
-              <button type="button">등록</button>
-            </router-link>
+            <button @click="$router.push('/lms/notice/write')">등록</button>
           </div>              
         </div>
         <div class="pagination">
           <ul class="flex__m__c">
-            <li class="ar"><a href="" class="block"><span class="material-symbols-outlined">keyboard_double_arrow_left</span></a></li>
-            <li class="ar"><a href="" class="block"><span class="material-symbols-outlined">chevron_left</span></a></li>
-            <li><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li><a href="">3</a></li>
-            <li><a href="">4</a></li>
-            <li><a href="">5</a></li>
-            <li class="ar"><a href="" class="block"><span class="material-symbols-outlined">navigate_next</span></a></li>
-            <li class="ar"><a href="" class="block"><span class="material-symbols-outlined">keyboard_double_arrow_right</span></a></li>
+            <li class="ar"><router-link to="" class="block"><span class="material-symbols-outlined">keyboard_double_arrow_left</span></router-link></li>
+            <li class="ar"><router-link to="" class="block"><span class="material-symbols-outlined">chevron_left</span></router-link></li>
+            <li><router-link to="">1</router-link></li>
+            <li><router-link to="">2</router-link></li>
+            <li><router-link to="">3</router-link></li>
+            <li><router-link to="">4</router-link></li>
+            <li><router-link to="">5</router-link></li>
+            <li class="ar"><router-link to="" class="block"><span class="material-symbols-outlined">navigate_next</span></router-link></li>
+            <li class="ar"><router-link to="" class="block"><span class="material-symbols-outlined">keyboard_double_arrow_right</span></router-link></li>
           </ul>
         </div>          
       </div>          
@@ -94,12 +90,15 @@
   </section>
 </template>
 
-
 <script>
 import { ref, onMounted } from 'vue';
-
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
 
 export default{
+  components: {
+    VueDatePicker
+  },
   setup() {
     const date = ref([]);
     onMounted(() => {
@@ -120,7 +119,5 @@ export default{
 </script>
 
 <style scoped lang="scss">
-.vue-datapicker {
-  width:auto;
-}
+.vue-datapicker { width:auto; }
 </style>

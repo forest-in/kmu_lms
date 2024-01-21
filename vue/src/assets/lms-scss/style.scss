@@ -46,7 +46,7 @@ header {
         button {
           padding:.8rem 1.8rem;
           color: $bk;
-          font-size:1.4rem;
+          font-size:1.5rem;
           font-weight:500;
           background:$wh;
           border-radius: .5rem;
@@ -87,18 +87,26 @@ header {
         font-weight:400;        
         line-height:1.5;
         strong {
-          font-size:1.8rem;
+          font-size:1.9rem;
         }
       }
     }
     #gnb {
-      li a {
-        display:block;
-        padding:1.5rem 3.5rem 1.5rem 5rem;
-        font-size:1.5rem;
-      }
-      > ul > li > a {
-        padding-left:3.5rem;
+      .accordion-item {
+        @include transition();
+        a {
+          display:block;
+          padding:1.5rem 2rem;
+        }
+        .accordion-content {
+          @include transition();
+          li {
+
+            a {
+              padding-left:3rem;
+            }
+          }
+        }     
       }
     }
   }  
@@ -109,7 +117,7 @@ header {
 // ── contents ──
 // default
 main {
-  $formDH :4rem;    
+  $formDH :4.5rem;    
   min-height: calc(100vh - $headerH); 
   padding:7rem 5rem;
   border:.1rem solid #ededed;
@@ -127,7 +135,6 @@ main {
   select, input:not([type="radio"]):not([type="checkbox"]), button {
     padding:0 1.5rem;
     height: $formDH;
-    font-size: 1.4rem;
     line-height: $formDH;
     border: .1rem solid #eee;
     border-radius: .5rem;
@@ -137,12 +144,24 @@ main {
     border: .1rem solid $tm2;
     background: $tm2;
     line-height: 1;
+    &.ty2{
+      background: $wh;
+      border-color: $tm2;
+      color: $cl1;
+      font-weight: 500;
+    }
+    &.ty3{
+      background: $tm1;
+      border-color: $tm1;
+      color: $bk;
+      font-weight: 500;
+    }
   }
   select {
     position: relative;
     padding-right: 3.5rem;
     background:url($url+'arrow.png') no-repeat right 1rem center;
-    &.t2 {
+    &.ty2 {
       background-color: #f0f5f9;
     }    
   }  
@@ -223,52 +242,16 @@ main {
     th {
       position: relative;
       padding:2rem .5rem;
-      font-size: 1.6rem;
       font-weight:600;
       color: $cl1;
       border-bottom:.2rem solid $cl1;            
     }
     td {
-      padding:1.5rem .5rem;
+      padding:2rem .5rem;
       border-bottom:.1rem solid $cl1; 
-      &.tit {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        font-size: 1.6rem;
-        font-weight: 500;
-        a {          
-          @include transition();
-          &:hover {
-            color:$cl1;
-            text-decoration:underline;
-          }
-        }
-      }
-      &.num {
-        font-size: 1.4rem;
-        color:#777;
-      }
-      &.bold {
-        font-weight:500;
-      }  
-      button {        
-        color: $wh;
-        height:3rem;
-        border: .1rem solid $tm2;
-        border-radius: 1.5rem;
-        background: $tm2;
-        &.t2{
-          background: $wh;
-          border-color: $tm2;
-          color: $cl1;
-          font-weight: 500;
-        }
-        &.t3{
-          background: $tm1;
-          border-color: $tm1;
-          color: $bk;
-          font-weight: 500;
-        }
+      button {      
+        height:3.5rem;
+        border-radius: 1.75rem;
         &.file-del {
           height:2rem;
           width:2rem;
@@ -281,11 +264,37 @@ main {
           }
         }
       }      
+      &.tit {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        font-weight: 500;
+        a {          
+          @include transition();
+          &:hover {
+            color:$cl1;
+            text-decoration:underline;
+          }
+        }
+      }
+      &.num {
+        font-size: 1.5rem;
+        color:#777;
+      }
+      &.bold {
+        font-weight:500;
+      }
       &.empty {
         padding:15rem 0;
-      }
+      } 
     }    
   }
+  textarea {
+    height: 20rem;
+    padding:2rem;
+    line-height:1.5;
+    border: .1rem solid #eee;
+    border-radius: 1rem;
+  }  
   .search-type {
     $dh : 2rem;
     .item-date {
@@ -293,6 +302,7 @@ main {
       .dp__input {
         padding-left:4.5rem;
         font-family: 'Pretendard';
+        font-size:1.6rem;
         color:#636363;
       }
       .dp__icon {
@@ -306,19 +316,20 @@ main {
           padding:0;
         }
         .dp__action_buttons button {
-          width:5rem;
+          width:4rem;
           padding:0 !important;
           text-align:center;
           justify-content: center;
         }
       }
       .dp__selection_preview {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         line-height:1.2;
       }
       .dp__action_button {
         width:5rem;
-        font-size:1.2rem;
+        height: 3rem;
+        font-size:1.5rem;
         justify-content: center;
       }
     }
@@ -331,7 +342,7 @@ main {
       }
     }
     input{
-      width:26rem;
+      width:27rem;
     }
   }
   .search-txt {
@@ -348,12 +359,7 @@ main {
     }
     select, button {
       min-width:15rem;
-    }
-    .t2 {
-      color: $tm2;
-      background:$wh;
-      font-weight:500;
-    }
+    }  
   }
   &.board-list {
     $dh:3rem;
@@ -380,7 +386,7 @@ main {
       }
       button {        
         padding: 0 1.5rem;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
     }    
     .pagination {
@@ -392,7 +398,6 @@ main {
           width:$dh;
           padding:.5rem;
           font-weight:500;
-          font-size:1.6rem;
           line-height:2.4rem;
           @include transition();
         }
@@ -426,7 +431,7 @@ main {
       }    
     }
   }  
-  &.board-write {
+  &.board-write, &.board-answer {
     table {
       border-top: .1rem solid $cl2;
     }
@@ -446,7 +451,7 @@ main {
     
   }
   &.board-view {
-    .bv-tit, .bv-con {
+    .bv-tit, .bv-con, .bv-ans {
       font-size: 1.8rem;
       line-height: 1.6;
       border-bottom: .1rem solid $cl2;      
@@ -457,10 +462,13 @@ main {
       background: $cl3;
       border-bottom: .1rem solid $cl2;
     }
-    .bv-tit {      
-      padding-bottom: 3rem;
-      h2 {
-        font-size: 2.5rem;
+    .bv-tit {
+      padding:0 1.5rem 3rem;
+      h2, > p {
+        padding-bottom: 1rem;
+        font-size: 3rem;
+        font-weight:500;   
+        line-height: 1.3;     
       }
       .t2 {
         margin-top:.5rem;
@@ -483,9 +491,9 @@ main {
 
       }      
     }    
-    .bv-con {
-      padding: 6rem 0 12rem;      
-    }
+    .bv-con {      
+      padding: 6rem 1.5rem 12rem;    
+    }    
     .bv-list {
       margin-top:10rem;
       .b-prev .t1, .b-next .t1 {
@@ -501,18 +509,50 @@ main {
         }
       }
     }
+    .bv-ans {
+      .tit {
+        padding:1.5rem;
+        line-height:2.4rem;
+        background: $cl3;
+        border-bottom: .1rem solid $cl2;
+        button {
+          height:3.5rem;
+          line-height:3.5rem;
+          border-radius: 1.75rem;
+          border-color: $cl2;
+          color: $tm2;
+          font-size: 1.6rem;
+        }
+      }
+      > div {
+        padding: 6rem 1.5rem;    
+      }
+      
+    }
+    .bv-textarea {
+      height:20rem;
+      font-size:1.8rem;
+      textarea {
+        width:calc(100% - 11.5rem);
+        height:100%;
+      }
+      button {
+        width:10rem;
+        height:100%;
+        font-size:1.7rem;        
+      }
+      
+    }    
   }
 }
 
 
 .popup {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
   justify-content: center;
   align-items: center;
 }

@@ -8,14 +8,14 @@
             <div class="bv-tit">
               <h2>24학년도 1학기 수강신청 내역 반영 일정</h2>
               <div class="flex t2">
-                <span class="inline">홍길동</span>
+                <span class="inline">국민대학교</span>
                 <span class="inline">2024. 01 .12
                   <span class="material-symbols-outlined inline-m">schedule</span>10:10
                 </span>                
               </div>
             </div>
-            <div class="bv-file tr">
-              <a href="path/to/your/file.txt" download="filename.txt" class="flex__d__e">
+            <div class="bv-file">
+              <a href="path/to/your/file.txt" download="filename.txt" class="flex__d__s">
                 <span class="inline mgr10">첨부파일</span>
                 <span class="material-symbols-outlined">download</span>
               </a>
@@ -35,8 +35,14 @@
           </article>
         </div>
         <div class="ea">
-          <div class="tc">
-            <button type="button" onclick="history.back()">목록</button>
+          <div class="flex__d__m">
+            <div class="la flex__s__m">
+              <button @click="$router.push('/lms/notice')" type="button">목록</button>
+            </div>
+            <div class="ra flex__e__m">
+              <button @click="$router.push('/lms/notice'); openPopup('popupDel-3')" class="ty2">삭제</button>
+              <button @click="$router.push('/lms/notice/write');" type="button">수정</button>
+            </div>
           </div>
           <div class="bv-list">
             <table>
@@ -68,10 +74,4 @@
 </template>
 
 <script>
-export default{
-    
-}
 </script>
-
-<style scoped>
-</style>

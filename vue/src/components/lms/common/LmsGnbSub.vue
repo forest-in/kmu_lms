@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <AccordionItem
+    <accordion-item
       v-for="(item, index) in items"
       :key="index"
       :title="item.title"

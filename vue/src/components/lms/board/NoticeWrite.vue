@@ -31,7 +31,7 @@
                   <ul id="output">
                     <li v-for="file in files" :key="file.name" class="inline mgr10">
                       {{ file.name }}
-                      <button @click="removeFile(index)" class="file-del t2">
+                      <button @click="removeFile(index)" type="button" class="file-del ty2">
                         <span class="material-symbols-outlined">close</span>
                       </button>
                     </li>
@@ -42,8 +42,8 @@
             <tr>
               <th>노출 여부</th>
               <td>                  
-                <label class="rad t2"><input type="radio" name="data1" checked><i></i><span>노출</span></label>
-                <label class="rad t2"><input type="radio" name="data1"><i></i><span>비노출</span></label>
+                <label class="rad"><input type="radio" name="data1" checked><i></i><span>노출</span></label>
+                <label class="rad"><input type="radio" name="data1"><i></i><span>비노출</span></label>
               </td>
               <th>상단고정</th>
               <td>      
@@ -64,22 +64,15 @@
               </td>
             </tr>
           </table>
-        </form>
-        
+        </form>        
         <div class="ea flex__d__m">
           <div class="la flex__s__m">
-            <button type="button">삭제</button>
-            <router-link to="/lms/notice">
-              <button type="button" class="t2">취소</button>
-            </router-link>
+            <button @click="$router.push('/lms/notice'); openPopup('popupDel-3')" type="button" class="ty2">삭제</button>
+            <button @click="$router.push('/lms/notice')" type="button" class="ty2">취소</button>
           </div>
           <div class="ra flex__e__m">
-            <router-link to="/lms/notice">
-              <button type="button">등록</button>
-            </router-link>
-            <router-link to="/lms/notice">
-              <button type="button">수정</button>            
-            </router-link>
+            <button @click="$router.push('/lms/notice'); openPopup('popupReg')" type="button">등록</button>
+            <button @click="$router.push('/lms/notice/view'); openPopup('popupEdit')" type="button">수정</button>
           </div>              
         </div>
 
@@ -105,6 +98,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

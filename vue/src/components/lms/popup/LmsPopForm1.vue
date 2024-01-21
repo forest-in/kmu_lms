@@ -13,7 +13,7 @@
 
         <button @click="submitForm">Submit</button>
       </form>
-      <button @click="closePopup">Close</button>
+      <button @click="closePopup" type="button">Close</button>
     </div>
   </div>
 </template>
@@ -42,9 +42,7 @@ export default {
       this.$store.dispatch('closePopup', this.popupId);
     },
     submitForm() {
-      // Form 데이터를 처리하는 로직 추가
       console.log('Form submitted:', this.formData);
-      // 팝업 닫기
       this.closePopup();
     },
   },

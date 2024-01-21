@@ -1,13 +1,11 @@
-<!-- components/ReusablePopup.vue -->
 <template>
   <div class="pop-wrap">
-    <!-- <button @click="openPopup('popup1', 'Popup Content 1')">Open Popup 1</button> -->
-    <button @click="openPopup('popup2', 'Popup Content 2')">Open Popup 2</button>
-    <button @click="openPopup('popup3', 'Popup Content 3')">Open Popup 3</button>
-
-    <lms-pop-default :popupId="'popup1'" />
-    <lms-pop-default :popupId="'popup2'" />
-    <lms-pop-Form1 :popupId="'popup3'" />
+    <lms-pop-default :popupId="'popupDel-1'" :popupData="popupDel1" />
+    <lms-pop-default :popupId="'popupDel-2'" :popupData="popupDel2" />
+    <lms-pop-default :popupId="'popupDel-3'" :popupData="popupDel3" />
+    <lms-pop-default :popupId="'popupReg'" :popupData="popupReg" />
+    <lms-pop-default :popupId="'popupEdit'" :popupData="popupEdit" />
+    <lms-pop-Form1 :popupId="'popup4'" />
   </div>
 </template>
 
@@ -20,14 +18,31 @@ export default {
     LmsPopDefault,
     LmsPopForm1
   },
-  methods: {
-    openPopup(id, data) {
-      this.$store.dispatch('openPopup', { id, data });
-    },
-  },
+  data() {
+    return {
+      popupDel1: {
+        txt1: "삭제할 게시글을 선택해주세요."
+      },
+      popupDel2: {
+        txt1: "선택한 게시글을 삭제하시겠습니까?",
+        addBtn: true,
+        nextDelOpen: true,
+      },
+      popupDel3: {
+        txt1: "삭제되었습니다."
+      },
+      popupReg: {
+        txt1: "등록되었습니다."
+      },
+      popupEdit: {
+        txt1: "수정되었습니다."
+      },
+    };
+  }
 }
+
+
+
 </script>
 
-<style scoped>
 
-</style>
