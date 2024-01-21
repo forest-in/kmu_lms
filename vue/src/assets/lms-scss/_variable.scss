@@ -9,30 +9,21 @@ $desktop: 1500px;
 
 
 // ── Thema ──
-$tm1: #89f3d6;
-$tm2: #002844;
+$tm1: #1be5ff;
+$tm2: #1d3f7f;
 $tm3: #f7f8f9;
+$tm4: #5691f3;
+$tm5: #175fe3;
 $bk: #111;
 $wh: #fff;
-$cl1: #004779;
+$cl1: #9bfffa;
 $cl2: #d1dbe1;
 $cl3: #f7f7f7;
 
 
 // ── Common ──
-$headerH: 8.8rem;
+$headerH: 5.8rem;
+$ratio100: 100%;
 $url: '../lms-img/';
+$size: (1rem, 2rem, 3rem, 4rem, 5rem, 6rem, 7rem, 8rem, 9rem, 10rem );
 
-
-
-$margin-values: 10 20 30 40 50;
-
-
-@each $value in $margin-values {
-  $value-rem: $value * .1rem;
-  
-  .mgr#{$value} { margin-right: $value-rem; }
-  .mgl#{$value} { margin-left: $value-rem; }
-  .mgt#{$value} { margin-top: $value-rem; }
-  .mgb#{$value} { margin-bottom: $value-rem; }
-}

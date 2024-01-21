@@ -2,97 +2,141 @@
 
 // ── header ──
 header {  
-  .top {
-    width: 100%;
-    height: $headerH;
-    padding: 1.5rem 2rem;
+  .top { 
+    padding: 0 nth($size, 2);
     color:$wh;
+    font-size: 1.5rem;
     font-weight: 400;
-    background: $tm2;
+    background: $tm4;
     box-shadow: 0 0 .5rem .5rem rgba(0,0,0,.05);
     z-index: 100;
-    .logo {
-      img {
-        width: 8.6rem;
-      }
-    }
-    .t-menu li {
-      margin-left: 2rem;
-      a {
-        @include transition();
-        &:hover {
-          color: $tm1;
+    .inner {
+      > div {
+        height: $headerH;
+        .logo {
+          img { 
+            width: nth($size, 9); 
+          }
         }
-        .material-symbols-outlined {
-          font-size: 3rem;
-        }
-        i {
-          $lg : 2rem;
-          $lg2 : -.75rem;          
-          top: $lg2;
-          right: $lg2;
-          width: $lg;
-          height: $lg;
-          background:$tm1;
-          color:$bk;
-          font-size: 1.2rem;  
-          font-weight:500;        
-          line-height: $lg;
-          border-radius: 50%;
-        }
-      }
-      &.logout {
-        margin-left:5.5rem;
-        button {
-          padding:.8rem 1.8rem;
-          color: $bk;
-          font-size:1.5rem;
-          font-weight:500;
-          background:$wh;
-          border-radius: .5rem;
-        }
-      }
-    }    
+        .t-menu {
+          $sm-sz1: .5rem;
+          height: $ratio100;
+          li {            
+            display: flex;
+            align-items: center;
+            height: $ratio100;
+            margin-left: nth($size, 3);
+            a {              
+              @include transition();
+              &:hover { 
+                color: $cl1; 
+              }
+              > div {
+                div {
+                  .material-symbols-outlined {
+                    font-size: nth($size, 2);
+                  }
+                  i {
+                    $lg : 1.5rem;
+                    top: -.8rem;
+                    right: -.4rem;
+                    width: $lg;
+                    height: $lg;
+                    font-size: nth($size, 1);  
+                    font-weight:600;        
+                    line-height: $lg;
+                    border-radius: 50%;
+                    box-shadow: 0 0 .5rem .1rem rgba(0,0,0,.1);
+                    @include theme($wh, $tm2);
+                  }
+                }
+                p { 
+                  margin-left: $sm-sz1; 
+                }
+              }        
+            }
+            &.logout {              
+              margin-left:nth($size, 4);
+              button {
+                height: $ratio100;
+                padding:0 1.8rem;                
+                font-size:1.5rem;
+                font-weight:500;
+                background:$tm2;
+                @include transition();
+                .material-symbols-outlined { 
+                  margin-right: $sm-sz1; 
+                }
+              }
+              &:hover { 
+                color: $cl1;
+              }
+            }
+          }          
+        }    
+        .ham-btm {
+          display:none;
+        }             
+      }      
+    }     
   }  
 }
 
 
 // ── aside ──
 .container {  
-  padding:3.5rem 1.5rem;
-  grid-template-rows: 100% 100%;
+  padding:nth($size, 3) nth($size, 2);
+  grid-template-rows: $ratio100;
   @include transition();
   aside {
     display: none;
-    height: 100%;
+    height: $ratio100;
     min-height: calc(100vh - $headerH);
-    background:$wh;
-    border:.1rem solid #ededed;
+    //background:$wh;
+    // border:.1rem solid #ededed;
     border-radius:.5rem;
     @include transition();
     .ta {
-      padding:4rem 0 3rem;      
+      padding:nth($size, 4) 0 nth($size, 3);
+      color: $wh;
+      background: $tm5;
+      border-radius:1.5rem;
+      overflow: hidden;
       .u-logo {
-        width: 76%;
-        max-width:18rem;
-        img {
-          max-width: 100%;
-          object-fit: cover;
-          object-position: center;
-        }
+        font-size: nth($size, 6);
+        font-weight: 700;
+        top:- .5rem;
+        left:calc(50% - 12.4rem);
+        opacity: .1;
+        z-index: 1;
+        white-space: nowrap;
+        // img {
+        //   max-width: 100%;
+        //   object-fit: cover;
+        //   object-position: center;
+        // }
       }
       .user {
-        margin-top:3rem;
-        padding:0 2rem;
+        margin-top:nth($size, 3);
+        padding:0 nth($size, 2);
         font-weight:400;        
         line-height:1.5;
+        font-size: 1.9rem;
+        z-index: 2;
         strong {
-          font-size:1.9rem;
+          font-size:2.6rem;
         }
-      }
+      }      
+    }
+    .t-menu {
+      display: none;
     }
     #gnb {
       .accordion-item {
+        margin-top:1rem;
+        border: .1rem solid #eee;
+        border-radius: 1rem;
+        overflow: hidden;
         @include transition();
         a {
           display:block;
@@ -101,6 +145,7 @@ header {
         .accordion-content {
           @include transition();
           li {
+            
 
             a {
               padding-left:3rem;
@@ -147,13 +192,13 @@ main {
     &.ty2{
       background: $wh;
       border-color: $tm2;
-      color: $cl1;
+      color: $tm2;
       font-weight: 500;
     }
     &.ty3{
-      background: $tm1;
-      border-color: $tm1;
-      color: $bk;
+      background: $tm4;
+      border-color: $tm4;
+      color: $wh;
       font-weight: 500;
     }
   }
@@ -243,12 +288,12 @@ main {
       position: relative;
       padding:2rem .5rem;
       font-weight:600;
-      color: $cl1;
-      border-bottom:.2rem solid $cl1;            
+      color: $tm2;
+      border-bottom:.2rem solid $tm2;            
     }
     td {
       padding:2rem .5rem;
-      border-bottom:.1rem solid $cl1; 
+      border-bottom:.1rem solid $tm2; 
       button {      
         height:3.5rem;
         border-radius: 1.75rem;
@@ -271,7 +316,7 @@ main {
         a {          
           @include transition();
           &:hover {
-            color:$cl1;
+            color:$tm2;
             text-decoration:underline;
           }
         }
@@ -570,36 +615,29 @@ main {
 
 // ── Responsive ──
 @include desktop {
-  .container {
-    grid-template-columns: 25rem auto;
-    @include layoutPC();
-  }
+  @include layoutPC();
 }
 
 @include desktopToLaptop {
-  .container {
-    grid-template-columns: 20rem auto;
-    @include layoutPC();
-  }  
+  @include layoutPC($col:20rem); 
 }
 
 @include laptopTotablet {
-  .container {
-    grid-template-columns: 18rem auto;
-    @include layoutPC();
-  }
+  @include layoutPC($col:18rem);
 }
 
 @include tablet {
-  body {background:pink;}
+  @include t-dafault(); @include t-t-dafault (); @include t-t-m-dafault ();
+  @include t-header(); @include tm-header ();
 }
 
-@include tabletToMobile  {
-  body {background:gray;}
-  .m-mt10 {margin-top:1rem;}
+@include tabletToMobile  {  
+  @include tm-dafault(); @include t-t-m-dafault (); @include t-m-dafault();
+  @include t-header(); @include tm-header ();
 }
 
 @include mobile  {
-  body {background:orange;}
-  .m-mt10 {margin-top:1rem;}
+  @include m-dafault(); @include t-m-dafault(); @include t-t-m-dafault ();
+  @include m-header(); @include tm-header ();
+  
 }

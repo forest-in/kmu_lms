@@ -1,194 +1,153 @@
-.mgr10 {
-  margin-right: 1rem;
-}
-
-.mgl10 {
-  margin-left: 1rem;
-}
-
-.mgt10 {
-  margin-top: 1rem;
-}
-
-.mgb10 {
-  margin-bottom: 1rem;
-}
-
-.mgr20 {
-  margin-right: 2rem;
-}
-
-.mgl20 {
-  margin-left: 2rem;
-}
-
-.mgt20 {
-  margin-top: 2rem;
-}
-
-.mgb20 {
-  margin-bottom: 2rem;
-}
-
-.mgr30 {
-  margin-right: 3rem;
-}
-
-.mgl30 {
-  margin-left: 3rem;
-}
-
-.mgt30 {
-  margin-top: 3rem;
-}
-
-.mgb30 {
-  margin-bottom: 3rem;
-}
-
-.mgr40 {
-  margin-right: 4rem;
-}
-
-.mgl40 {
-  margin-left: 4rem;
-}
-
-.mgt40 {
-  margin-top: 4rem;
-}
-
-.mgb40 {
-  margin-bottom: 4rem;
-}
-
-.mgr50 {
-  margin-right: 5rem;
-}
-
-.mgl50 {
-  margin-left: 5rem;
-}
-
-.mgt50 {
-  margin-top: 5rem;
-}
-
-.mgb50 {
-  margin-bottom: 5rem;
-}
-
 header .top {
-  width: 100%;
-  height: 8.8rem;
-  padding: 1.5rem 2rem;
+  padding: 0 2rem;
   color: #fff;
+  font-size: 1.5rem;
   font-weight: 400;
-  background: #002844;
+  background: #5691f3;
   box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.05);
   z-index: 100;
 }
-header .top .logo img {
-  width: 8.6rem;
+header .top .inner > div {
+  height: 5.8rem;
 }
-header .top .t-menu li {
-  margin-left: 2rem;
+header .top .inner > div .logo img {
+  width: 9rem;
 }
-header .top .t-menu li a {
-  transition: all 0.2s ease;
+header .top .inner > div .t-menu {
+  height: 100%;
 }
-header .top .t-menu li a:hover {
-  color: #89f3d6;
+header .top .inner > div .t-menu li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 3rem;
 }
-header .top .t-menu li a .material-symbols-outlined {
-  font-size: 3rem;
+header .top .inner > div .t-menu li a {
+  transition: all ease;
+  transition-duration: 0.25s;
 }
-header .top .t-menu li a i {
-  top: -0.75rem;
-  right: -0.75rem;
-  width: 2rem;
-  height: 2rem;
-  background: #89f3d6;
-  color: #111;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 2rem;
+header .top .inner > div .t-menu li a:hover {
+  color: #9bfffa;
+}
+header .top .inner > div .t-menu li a > div div .material-symbols-outlined {
+  font-size: 2rem;
+}
+header .top .inner > div .t-menu li a > div div i {
+  top: -0.8rem;
+  right: -0.4rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
   border-radius: 50%;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+  background: #fff;
+  color: #1d3f7f;
 }
-header .top .t-menu li.logout {
-  margin-left: 5.5rem;
+header .top .inner > div .t-menu li a > div p {
+  margin-left: 0.5rem;
 }
-header .top .t-menu li.logout button {
-  padding: 0.8rem 1.8rem;
-  color: #111;
+header .top .inner > div .t-menu li.logout {
+  margin-left: 4rem;
+}
+header .top .inner > div .t-menu li.logout button {
+  height: 100%;
+  padding: 0 1.8rem;
   font-size: 1.5rem;
   font-weight: 500;
-  background: #fff;
-  border-radius: 0.5rem;
+  background: #1d3f7f;
+  transition: all ease;
+  transition-duration: 0.25s;
+}
+header .top .inner > div .t-menu li.logout button .material-symbols-outlined {
+  margin-right: 0.5rem;
+}
+header .top .inner > div .t-menu li.logout:hover {
+  color: #9bfffa;
+}
+header .top .inner > div .ham-btm {
+  display: none;
 }
 
 .container {
-  padding: 3.5rem 1.5rem;
-  grid-template-rows: 100% 100%;
-  transition: all 0.2s ease;
+  padding: 3rem 2rem;
+  grid-template-rows: 100%;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .container aside {
   display: none;
   height: 100%;
-  min-height: calc(100vh - 8.8rem);
-  background: #fff;
-  border: 0.1rem solid #ededed;
+  min-height: calc(100vh - 5.8rem);
   border-radius: 0.5rem;
-  transition: all 0.2s ease;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .container aside .ta {
   padding: 4rem 0 3rem;
+  color: #fff;
+  background: #175fe3;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 .container aside .ta .u-logo {
-  width: 76%;
-  max-width: 18rem;
-}
-.container aside .ta .u-logo img {
-  max-width: 100%;
-  object-fit: cover;
-  object-position: center;
+  font-size: 6rem;
+  font-weight: 700;
+  top: -0.5rem;
+  left: calc(50% - 12.4rem);
+  opacity: 0.1;
+  z-index: 1;
+  white-space: nowrap;
 }
 .container aside .ta .user {
   margin-top: 3rem;
   padding: 0 2rem;
   font-weight: 400;
   line-height: 1.5;
+  font-size: 1.9rem;
+  z-index: 2;
 }
 .container aside .ta .user strong {
-  font-size: 1.9rem;
+  font-size: 2.6rem;
+}
+.container aside .t-menu {
+  display: none;
 }
 .container aside #gnb .accordion-item {
-  transition: all 0.2s ease;
+  margin-top: 1rem;
+  border: 0.1rem solid #eee;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .container aside #gnb .accordion-item a {
   display: block;
   padding: 1.5rem 2rem;
 }
 .container aside #gnb .accordion-item .accordion-content {
-  transition: all 0.2s ease;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .container aside #gnb .accordion-item .accordion-content li a {
   padding-left: 3rem;
 }
 
 main {
-  min-height: calc(100vh - 8.8rem);
+  min-height: calc(100vh - 5.8rem);
   padding: 7rem 5rem;
   border: 0.1rem solid #ededed;
   border-radius: 0.5rem;
   background: #fff;
-  transition: all 0.2s ease;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 main section h1.tit {
   margin-bottom: 5rem;
   font-size: 3.8rem;
   font-weight: 600;
-  color: #002844;
+  color: #1d3f7f;
 }
 main select, main input:not([type=radio]):not([type=checkbox]), main button {
   padding: 0 1.5rem;
@@ -199,20 +158,20 @@ main select, main input:not([type=radio]):not([type=checkbox]), main button {
 }
 main button {
   color: #fff;
-  border: 0.1rem solid #002844;
-  background: #002844;
+  border: 0.1rem solid #1d3f7f;
+  background: #1d3f7f;
   line-height: 1;
 }
 main button.ty2 {
   background: #fff;
-  border-color: #002844;
-  color: #004779;
+  border-color: #1d3f7f;
+  color: #1d3f7f;
   font-weight: 500;
 }
 main button.ty3 {
-  background: #89f3d6;
-  border-color: #89f3d6;
-  color: #111;
+  background: #5691f3;
+  border-color: #5691f3;
+  color: #fff;
   font-weight: 500;
 }
 main select {
@@ -274,11 +233,11 @@ main .rad input:checked + i::after {
   height: 1rem;
   top: 0.4rem;
   left: 0.4rem;
-  background: #002844;
+  background: #1d3f7f;
   border-radius: 50%;
 }
 main .rad input:checked + i + span {
-  color: #002844;
+  color: #1d3f7f;
   font-weight: 500;
 }
 
@@ -292,12 +251,12 @@ main .rad input:checked + i + span {
   position: relative;
   padding: 2rem 0.5rem;
   font-weight: 600;
-  color: #004779;
-  border-bottom: 0.2rem solid #004779;
+  color: #1d3f7f;
+  border-bottom: 0.2rem solid #1d3f7f;
 }
 .board-box table td {
   padding: 2rem 0.5rem;
-  border-bottom: 0.1rem solid #004779;
+  border-bottom: 0.1rem solid #1d3f7f;
 }
 .board-box table td button {
   height: 3.5rem;
@@ -320,10 +279,11 @@ main .rad input:checked + i + span {
   font-weight: 500;
 }
 .board-box table td.tit a {
-  transition: all 0.2s ease;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .board-box table td.tit a:hover {
-  color: #004779;
+  color: #1d3f7f;
   text-decoration: underline;
 }
 .board-box table td.num {
@@ -412,8 +372,8 @@ main .rad input:checked + i + span {
   top: calc(50% - 0.75rem);
   width: 0.1rem;
   height: 1.5rem;
-  color: #002844;
-  background: #002844;
+  color: #1d3f7f;
+  background: #1d3f7f;
 }
 .board-box.board-list th:first-child::before {
   display: none;
@@ -438,17 +398,18 @@ main .rad input:checked + i + span {
   padding: 0.5rem;
   font-weight: 500;
   line-height: 2.4rem;
-  transition: all 0.2s ease;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .board-box.board-list .pagination li:hover {
-  color: #89f3d6;
+  color: #1be5ff;
   text-decoration: underline;
 }
 .board-box.board-list .pagination .ar a {
   height: 3rem;
   padding: 0;
   border-radius: 50%;
-  background: #002844;
+  background: #1d3f7f;
   opacity: 0.9;
 }
 .board-box.board-list .pagination .ar a span {
@@ -457,10 +418,11 @@ main .rad input:checked + i + span {
   color: #fff;
   line-height: 2.9rem;
   font-size: 1.8rem;
-  transition: all 0.2s ease;
+  transition: all ease;
+  transition-duration: 0.25s;
 }
 .board-box.board-list .pagination .ar a:hover span {
-  color: #89f3d6;
+  color: #1be5ff;
   opacity: 1;
 }
 .board-box.board-list .pagination .ar:hover {
@@ -548,7 +510,7 @@ main .rad input:checked + i + span {
   line-height: 3.5rem;
   border-radius: 1.75rem;
   border-color: #d1dbe1;
-  color: #002844;
+  color: #1d3f7f;
   font-size: 1.6rem;
 }
 .board-box.board-view .bv-ans > div {
@@ -618,24 +580,129 @@ main .rad input:checked + i + span {
   }
 }
 @media (min-width: 720px) and (max-width: 959px) {
-  body {
-    background: pink;
+  .t-non {
+    display: none !important;
+  }
+  .t-show {
+    display: block !important;
+  }
+  .t-t-non {
+    display: none !important;
+  }
+  .t-t-show {
+    display: block !important;
+  }
+  .t-t-m-non {
+    display: none !important;
+  }
+  .t-t-m-show {
+    display: block !important;
+  }
+  header .top .inner > div .t-menu li {
+    margin-left: 2rem;
+  }
+  header .top .inner > div .t-menu li a > div div .material-symbols-outlined {
+    font-size: 3rem;
+  }
+  header .top .inner > div .t-menu li a > div p {
+    display: none;
+  }
+  header .top .inner > div .t-menu {
+    display: none;
+  }
+  header .top .inner > div .ham-btm {
+    display: flex;
+  }
+  .container aside .t-menu {
+    display: block;
   }
 }
 @media (min-width: 540px) and (max-width: 719px) {
-  body {
-    background: gray;
+  .tm-non {
+    display: none !important;
+  }
+  .tm-show {
+    display: block !important;
   }
   .m-mt10 {
     margin-top: 1rem;
+  }
+  .t-t-m-non {
+    display: none !important;
+  }
+  .t-t-m-show {
+    display: block !important;
+  }
+  .t-m-non {
+    display: none !important;
+  }
+  .t-m-show {
+    display: block !important;
+  }
+  .m-mt10 {
+    margin-top: 1rem;
+  }
+  header .top .inner > div .t-menu li {
+    margin-left: 2rem;
+  }
+  header .top .inner > div .t-menu li a > div div .material-symbols-outlined {
+    font-size: 3rem;
+  }
+  header .top .inner > div .t-menu li a > div p {
+    display: none;
+  }
+  header .top .inner > div .t-menu {
+    display: none;
+  }
+  header .top .inner > div .ham-btm {
+    display: flex;
+  }
+  .container aside .t-menu {
+    display: block;
   }
 }
 @media (min-width: 0) and (max-width: 539px) {
-  body {
-    background: orange;
+  .m-non {
+    display: none !important;
+  }
+  .m-show {
+    display: block !important;
+  }
+  .t-m-non {
+    display: none !important;
+  }
+  .t-m-show {
+    display: block !important;
   }
   .m-mt10 {
     margin-top: 1rem;
+  }
+  .t-t-m-non {
+    display: none !important;
+  }
+  .t-t-m-show {
+    display: block !important;
+  }
+  header .top .inner > div .t-menu li.logout {
+    margin-left: 0;
+  }
+  header .top .inner > div .t-menu li.logout button {
+    padding: 0 2rem;
+  }
+  header .top .inner > div .t-menu li.logout button .material-symbols-outlined {
+    margin-right: 0;
+  }
+  header .top .inner > div .t-menu li.logout button span:nth-child(2) {
+    display: none;
+  }
+  header .top .inner > div .t-menu {
+    display: none;
+  }
+  header .top .inner > div .ham-btm {
+    display: flex;
+  }
+  .container aside .t-menu {
+    display: block;
   }
 }
 

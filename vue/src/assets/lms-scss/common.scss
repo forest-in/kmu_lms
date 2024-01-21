@@ -71,7 +71,6 @@ body {
   height: 100%;
   overflow: auto;
   font: 400 1.6rem/1 "Pretendard";
-  background: #f0f5f9;
 }
 
 body * {
@@ -197,5 +196,16 @@ strong {
   display: grid;
 }
 
-.cl1 { color: $cl1; }
-.w100 { width: 100%; }
+
+$margin-values: (10, 20, 30, 40, 50);
+@each $value in $margin-values {
+  $value-rem: $value * .1rem;  
+  .mgr#{$value} { margin-right: $value-rem; }
+  .mgl#{$value} { margin-left: $value-rem; }
+  .mgt#{$value} { margin-top: $value-rem; }
+  .mgb#{$value} { margin-bottom: $value-rem; }
+}
+
+
+.cl1 { color: $tm2; }
+.w100 { width: $ratio100; }

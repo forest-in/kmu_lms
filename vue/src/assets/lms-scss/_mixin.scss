@@ -2,24 +2,24 @@
 
 
 // ── Default ──
-
-
-
-// ── Layout ──
-@mixin layoutPC() {
-  aside {
-    display: block;
-  }
-  main {      
-    margin-left:1.5rem;
-  }
+@mixin theme ($background, $color) {
+  background: $background;
+  color: $color;
 }
+
+
+
+
+
 
 
 // ── transition ──
-@mixin transition($trans: all .2s ease) {
+@mixin transition ($trans:all ease, $time:0.25s) {
   transition: $trans; 
+  transition-duration: $time;
 }
+
+
 
 
 
@@ -64,5 +64,87 @@
 }
 
 
+// ── Layout ──
+@mixin layoutPC($col:25rem) {
+  .container {
+    grid-template-columns: $col auto;
+    aside {
+      display: block;
+    }
+    main {      
+      margin-left:1.5rem;
+    }
+  }
+}
 
 
+// ── Responsive Default ──
+@mixin t-dafault () {
+  .t-non {display: none !important;}
+  .t-show {display: block !important;}
+}
+@mixin t-t-dafault () {
+  .t-t-non {display: none !important;}
+  .t-t-show {display: block !important;}
+}
+@mixin t-t-m-dafault () {
+  .t-t-m-non {display: none !important;}
+  .t-t-m-show {display: block !important;}
+}
+@mixin tm-dafault () {
+  .tm-non {display: none !important;}
+  .tm-show {display: block !important;}
+  .m-mt10 {margin-top:1rem;}
+}
+@mixin t-m-dafault () {
+  .t-m-non {display: none !important;}
+  .t-m-show {display: block !important;}
+  .m-mt10 {margin-top:1rem;}
+}
+@mixin m-dafault () {
+  .m-non {display: none !important;}
+  .m-show {display: block !important;}
+}
+
+
+// ── Responsive List ──
+// header
+@mixin t-header () {
+  header .top .inner > div .t-menu li{
+    margin-left: nth($size, 2);
+    a {
+      > div {
+        div {
+          .material-symbols-outlined {font-size:nth($size, 3)}          
+        }
+        p { display: none; }
+      }
+    }
+  }
+}
+@mixin tm-header () {
+  header .top .inner > div {
+    .t-menu {display:none;}
+    .ham-btm {display: flex;}
+  }
+  .container aside .t-menu {display:block;}
+   
+  
+}
+@mixin m-header () {
+  header .top .inner > div .t-menu li {
+    
+    &.logout { 
+      margin-left:0;
+      button {
+        padding: 0 nth($size, 2);
+        .material-symbols-outlined { margin-right:0;}
+        span:nth-child(2) {
+          display: none;
+        }
+      }
+      
+    }
+  }
+  
+}
