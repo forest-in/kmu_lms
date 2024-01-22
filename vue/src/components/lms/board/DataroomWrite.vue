@@ -6,10 +6,10 @@
         <form id="inquiry" name="inquiry" method="" action="">
           <table>
             <colgroup>
+               <col style="width:15%">
+              <col style="width:45%;">
               <col style="width:15%;">
-              <col style="width:35%;">
-              <col style="width:15%;">
-              <col style="width:35%;">
+              <col style="width:25%;">
             </colgroup>
             <tr>
               <th>제목</th>

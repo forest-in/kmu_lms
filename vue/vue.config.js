@@ -6,7 +6,7 @@ module.exports = {
     loaderOptions: {
       sass: {
         additionalData: `
-          @import '@/assets/lms-scss/variable.scss';
+          @import '@/assets/lms-scss/variable.scss';          
         `
       }
     }

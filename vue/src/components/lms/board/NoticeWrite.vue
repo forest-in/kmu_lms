@@ -6,10 +6,10 @@
         <form id="inquiry" name="inquiry" method="" action="">
           <table>
             <colgroup>
+              <col style="width:15%">
+              <col style="width:45%;">
               <col style="width:15%;">
-              <col style="width:35%;">
-              <col style="width:15%;">
-              <col style="width:35%;">
+              <col style="width:25%;">
             </colgroup>
             <tr>
               <th>제목</th>
@@ -45,7 +45,7 @@
                 <label class="rad"><input type="radio" name="data1" checked><i></i><span>노출</span></label>
                 <label class="rad"><input type="radio" name="data1"><i></i><span>비노출</span></label>
               </td>
-              <th>상단고정</th>
+              <th>상단 고정</th>
               <td>      
                 <label class="chk"><input type="checkbox"><i></i></label>
               </td>

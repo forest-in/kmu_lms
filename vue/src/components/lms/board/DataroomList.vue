@@ -5,7 +5,7 @@
       <div class="board-box board-list tc">            
         <form id="search" name="search" action="" method="">
           <div class="search-box flex__e__m">            
-            <select name="" id="" v-model="selectedValue">
+            <select name="" id="" v-model="selectedValue" class="m-non">
               <option value="title" selected>제목</option>
               <option value="date">등록일</option>
               <option value="school">학교</option>
@@ -21,9 +21,9 @@
             </div>   
           </div>
         </form>
-        <div class="search-txt tl mgt10">총 <strong class="cl1">10</strong>개의 게시글이 있습니다.</div>
+        <div class="search-txt tl mgt10">총 <strong class="cl1">0</strong>개의 게시글이 있습니다.</div>
         <table>
-          <colgroup>
+          <colgroup v-if="!isMobile">
             <col style="width:7%;">
             <col style="width:7%;">
             <col style="width:50%;">
@@ -31,13 +31,18 @@
             <col style="width:10%;">
             <col style="width:10%;">
           </colgroup>
+          <colgroup  v-if="isMobile"><!-- 모바일 버전 -->
+            <col style="width:60%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+          </colgroup>
           <tr>
-            <th>선택</th>
-            <th>번호</th>
+            <th class="m-non t-m-non">선택</th>
+            <th class="m-non t-m-non">번호</th>
             <th>제목</th>
             <th>학교명</th>
             <th>작성일</th>
-            <th>조회수</th>
+            <th class="m-non t-m-non">조회수</th>
           </tr>
           <tr>
             <td colspan="7" class="empty">등록된 게시글이 없습니다.</td>                
@@ -69,9 +74,9 @@ import { ref, onMounted } from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
-export default{
+export default {
   components: {
-    VueDatePicker
+    VueDatePicker,
   },
   setup() {
     const date = ref([]);
@@ -83,15 +88,40 @@ export default{
     return {
       date,
     };
-  },  
+  },
   data() {
     return {
       selectedValue: 'title',
+      isMobile: false,
     };
-  }
-}
+  },
+  methods: {
+    handleResize() {
+      this.isMobile = this.calculateIsMobile();
+    },
+    calculateIsMobile() {
+      return window.innerWidth <= 720;
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+};
 </script>
 
 <style scoped lang="scss">
 .vue-datapicker { width:auto; }
+@media (max-width: #{$tablet - 1px}) {
+  .board-list {
+    table {      
+      tr {
+        th:nth-child(3)::before {display:none;}
+      }
+    }    
+  }
+}
 </style>

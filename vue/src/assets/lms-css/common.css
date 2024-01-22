@@ -56,6 +56,8 @@ html {
 
 body {
   height: 100%;
+  width: 100%;
+  min-width: 38rem;
   overflow: auto;
   font: 400 1.6rem/1 "Pretendard";
 }

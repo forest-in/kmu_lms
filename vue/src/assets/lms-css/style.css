@@ -77,7 +77,6 @@ header .top .inner > div .ham-btm {
   transition-duration: 0.25s;
 }
 .container aside {
-  display: none;
   height: 100%;
   min-height: calc(100vh - 5.8rem);
   border-radius: 0.5rem;
@@ -177,7 +176,7 @@ main button.ty3 {
 main select {
   position: relative;
   padding-right: 3.5rem;
-  background: url("../lms-img/arrow.png") no-repeat right 1rem center;
+  background: url("@/assets/lms-img/arrow.png") no-repeat right 1rem center;
 }
 main select.ty2 {
   background-color: #f0f5f9;
@@ -185,6 +184,7 @@ main select.ty2 {
 main input[type=file] {
   padding: 0 !important;
   border: none !important;
+  max-width: 22rem;
 }
 main .chk {
   display: inline-block;
@@ -203,11 +203,11 @@ main .chk i {
   position: absolute;
   width: 2rem;
   height: 2rem;
-  top: 0;
+  top: 0.2rem;
   left: 0;
 }
 main .chk input:checked + i {
-  background: url("../lms-img/check.png") no-repeat center;
+  background: url("@/assets/lms-img/check.png") no-repeat center;
 }
 main .rad {
   display: inline-block;
@@ -231,8 +231,8 @@ main .rad input:checked + i::after {
   position: absolute;
   width: 1rem;
   height: 1rem;
-  top: 0.4rem;
-  left: 0.4rem;
+  top: calc(50% - 0.5rem);
+  left: calc(50% - 0.5rem);
   background: #1d3f7f;
   border-radius: 50%;
 }
@@ -456,7 +456,7 @@ main .rad input:checked + i + span {
   border-bottom: 0.1rem solid #d1dbe1;
 }
 .board-box.board-view .bv-tit {
-  padding: 0 1.5rem 3rem;
+  padding: 0 1.5rem 2rem;
 }
 .board-box.board-view .bv-tit h2, .board-box.board-view .bv-tit > p {
   padding-bottom: 1rem;
@@ -482,6 +482,9 @@ main .rad input:checked + i + span {
 }
 .board-box.board-view .bv-tit .t2 span:last-child::after {
   display: none;
+}
+.board-box.board-view .bv-tit .t2 > * {
+  margin-bottom: 1rem;
 }
 .board-box.board-view .bv-con {
   padding: 6rem 1.5rem 12rem;
@@ -530,6 +533,54 @@ main .rad input:checked + i + span {
   font-size: 1.7rem;
 }
 
+.main {
+  color: #161616;
+  font-size: 1.6rem;
+}
+.main ul p {
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.main .list ul {
+  margin-top: 2.4rem;
+  border-top: 0.1rem solid #161616;
+}
+.main .list ul li {
+  padding: 2.4rem 0;
+  border-bottom: 0.1rem solid #161616;
+}
+.main .list ul li p {
+  width: calc(100% - 8.2rem);
+}
+.main .list ul li span {
+  width: 8.2rem;
+  color: #ababab;
+}
+.main .list2 ul {
+  margin-top: 2.4rem;
+}
+.main .list2 ul li {
+  width: 33.3333333333%;
+  padding-bottom: 2rem;
+}
+.main .list2 ul li a > div img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.main .list2 ul li p {
+  padding: 0.5rem 0;
+  margin-left: 0.5rem;
+}
+.main .list2 ul li span {
+  display: block;
+  font-size: 1.4rem;
+  color: #ababab;
+  margin-left: 0.5rem;
+}
+
 .popup {
   top: 0;
   left: 0;
@@ -569,6 +620,9 @@ main .rad input:checked + i + span {
   }
 }
 @media (min-width: 960px) and (max-width: 1199px) {
+  html {
+    font-size: 9px;
+  }
   .container {
     grid-template-columns: 18rem auto;
   }
@@ -580,6 +634,19 @@ main .rad input:checked + i + span {
   }
 }
 @media (min-width: 720px) and (max-width: 959px) {
+  html {
+    font-size: 9px;
+  }
+  .container {
+    padding: 3rem 2rem;
+  }
+  .container aside {
+    display: none;
+  }
+  .container main {
+    padding: 7rem 5rem;
+    border: 0.1rem solid #ededed;
+  }
   .t-non {
     display: none !important;
   }
@@ -616,8 +683,63 @@ main .rad input:checked + i + span {
   .container aside .t-menu {
     display: block;
   }
+  main select, main input:not([type=radio]):not([type=checkbox]) {
+    height: 4rem;
+    line-height: 4rem;
+  }
+  main button {
+    height: 4rem;
+  }
+  main section h1.tit {
+    text-align: center;
+  }
+  .board-box .search-box {
+    justify-content: center;
+  }
+  .board-box .search-box .search-type input {
+    width: 21rem;
+  }
+  .board-box .search-box .search-type .item-date .dp__input {
+    padding-left: 3.5rem;
+    font-size: 1.4rem;
+    letter-spacing: -0.1rem;
+  }
+  .board-box .search-txt {
+    text-align: center;
+  }
+  .board-box.board-list table {
+    margin-top: 6rem;
+  }
+  .board-box.board-list table td button {
+    padding: 0 0.8rem;
+  }
+  .board-box.board-list .pagination {
+    margin-top: 12rem;
+  }
+  .board-box.board-view .ta {
+    margin-top: 6rem;
+  }
+  .board-box.board-write table {
+    margin-top: 6rem;
+  }
+  .board-box.board-write table .chk + input {
+    width: calc(100% - 4rem);
+  }
+  .board-box .ea select, .board-box .ea button {
+    min-width: 10rem;
+  }
 }
 @media (min-width: 540px) and (max-width: 719px) {
+  .container {
+    padding: 0;
+  }
+  .container aside {
+    display: none;
+  }
+  .container main {
+    padding: 7rem 3rem;
+    border: none;
+  }
   .tm-non {
     display: none !important;
   }
@@ -660,8 +782,66 @@ main .rad input:checked + i + span {
   .container aside .t-menu {
     display: block;
   }
+  main select, main input:not([type=radio]):not([type=checkbox]) {
+    height: 4rem;
+    line-height: 4rem;
+  }
+  main button {
+    height: 4rem;
+  }
+  main section h1.tit {
+    text-align: center;
+  }
+  .board-box .search-box {
+    justify-content: center;
+  }
+  .board-box .search-box .search-type input {
+    width: 21rem;
+  }
+  .board-box .search-box .search-type .item-date .dp__input {
+    padding-left: 3.5rem;
+    font-size: 1.4rem;
+    letter-spacing: -0.1rem;
+  }
+  .board-box .search-txt {
+    text-align: center;
+  }
+  .board-box.board-list table {
+    margin-top: 6rem;
+  }
+  .board-box.board-list table td button {
+    padding: 0 0.8rem;
+  }
+  .board-box.board-list .pagination {
+    margin-top: 12rem;
+  }
+  .board-box.board-view .ta {
+    margin-top: 6rem;
+  }
+  .board-box.board-write table {
+    margin-top: 6rem;
+  }
+  .board-box.board-write table .chk + input {
+    width: calc(100% - 4rem);
+  }
+  .board-box .ea select, .board-box .ea button {
+    min-width: 10rem;
+  }
 }
 @media (min-width: 0) and (max-width: 539px) {
+  html {
+    font-size: 9px;
+  }
+  .container {
+    padding: 0;
+  }
+  .container aside {
+    display: none;
+  }
+  .container main {
+    padding: 6rem 2rem;
+    border: none;
+  }
   .m-non {
     display: none !important;
   }
@@ -703,6 +883,51 @@ main .rad input:checked + i + span {
   }
   .container aside .t-menu {
     display: block;
+  }
+  main select, main input:not([type=radio]):not([type=checkbox]) {
+    height: 4rem;
+    line-height: 4rem;
+  }
+  main button {
+    height: 4rem;
+  }
+  main section h1.tit {
+    text-align: center;
+  }
+  .board-box .search-box {
+    justify-content: center;
+  }
+  .board-box .search-box .search-type input {
+    width: 21rem;
+  }
+  .board-box .search-box .search-type .item-date .dp__input {
+    padding-left: 3.5rem;
+    font-size: 1.4rem;
+    letter-spacing: -0.1rem;
+  }
+  .board-box .search-txt {
+    text-align: center;
+  }
+  .board-box.board-list table {
+    margin-top: 6rem;
+  }
+  .board-box.board-list table td button {
+    padding: 0 0.8rem;
+  }
+  .board-box.board-list .pagination {
+    margin-top: 12rem;
+  }
+  .board-box.board-view .ta {
+    margin-top: 6rem;
+  }
+  .board-box.board-write table {
+    margin-top: 6rem;
+  }
+  .board-box.board-write table .chk + input {
+    width: calc(100% - 4rem);
+  }
+  .board-box .ea select, .board-box .ea button {
+    min-width: 10rem;
   }
 }
 

@@ -38,24 +38,28 @@
           </div>
           <div class="bv-list">
             <table>
-              <colgroup>
+              <colgroup v-if="!isMobile">
                 <col style="width:10%;">
-                <col style="width:70%;">
-                <col style="width:10%;">
+                <col style="width:75%;">
+                <col style="width:15%;">
+              </colgroup>
+              <colgroup  v-if="isMobile"><!-- 모바일 버전 -->
+                <col style="width:20%;">
+                <col style="width:80%;">
               </colgroup>
               <tr class="b-prev">
                 <td class="t1 rel">이전글</td>
                 <td class="tl tit">
                   <router-link to="/lms/dataroom/view">교육철학및교육사 (010670H-81)</router-link>
                 </td>
-                <td class="num tr">2024.01.01</td>
+                <td class="num tr m-non t-m-non">2024.01.01</td>
               </tr>
               <tr class="b-next">
                 <td class="t1 rel">다음글</td>
                 <td class="tl tit">
                   <router-link to="/lms/dataroom/view">교육철학및교육사 (010670H-81)</router-link>
                 </td>
-                <td class="num tr">2024.01.01</td>
+                <td class="num tr m-non t-m-non">2024.01.01</td>
               </tr>
             </table>
           </div>
@@ -66,4 +70,26 @@
 </template>
 
 <script>
+export default {  
+  data() {
+    return {
+      isMobile: false,
+    };
+  },
+  methods: {
+    handleResize() {
+      this.isMobile = this.calculateIsMobile();
+    },
+    calculateIsMobile() {
+      return window.innerWidth <= 720;
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+};
 </script>

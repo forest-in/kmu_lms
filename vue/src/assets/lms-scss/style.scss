@@ -89,7 +89,6 @@ header {
   grid-template-rows: $ratio100;
   @include transition();
   aside {
-    display: none;
     height: $ratio100;
     min-height: calc(100vh - $headerH);
     //background:$wh;
@@ -213,6 +212,7 @@ main {
   input[type="file"]{
     padding: 0 !important;
     border:none !important;
+    max-width:22rem;
   }      
   .chk {
     $cw : 2rem;
@@ -231,7 +231,7 @@ main {
       position: absolute;
       width: $cw;
       height: $cw;
-      top:0;
+      top:.2rem;
       left:0;
     }   
     input:checked + i{
@@ -255,13 +255,14 @@ main {
       border-radius: 50%;
     }   
     input:checked + i::after{
+      $pos : calc(50% - .5rem);
       content: "";
       display: block;
       position: absolute;
-      width: 1rem;
-      height: 1rem;
-      top:.4rem;
-      left:.4rem;
+      width: nth($size, 1);
+      height: nth($size, 1);
+      top:$pos;
+      left:$pos;
       background: $tm2;
       border-radius:50%;
     }
@@ -508,7 +509,7 @@ main {
       border-bottom: .1rem solid $cl2;
     }
     .bv-tit {
-      padding:0 1.5rem 3rem;
+      padding:0 1.5rem 2rem;
       h2, > p {
         padding-bottom: 1rem;
         font-size: 3rem;
@@ -533,7 +534,9 @@ main {
             display: none;
           }
         }
-
+        > * {
+          margin-bottom:nth($size, 1);
+        }
       }      
     }    
     .bv-con {      
@@ -592,6 +595,67 @@ main {
 }
 
 
+.main {
+  $color1:#161616;
+  $color2:#ababab;
+  $lg:2.4rem;
+  $bt: .1rem solid $color1;
+  color: $color1;
+  font-size: 1.6rem;
+  ul p {
+    font-weight: 500;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+  }  
+  .list {
+    ul {
+      margin-top:$lg;
+      border-top:$bt;
+      li {
+        padding:$lg 0;
+        border-bottom: $bt;
+        p {
+          width: calc(100% - 8.2rem);
+        }
+        span {
+          width: 8.2rem;;          
+          color:$color2;
+        }
+      }
+    } 
+  }
+  .list2 {
+    ul {
+      margin-top:$lg;
+      li {
+        width:calc(100% / 3);
+        padding-bottom: nth($size, 2);
+        a > div {
+          img {
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        p {
+          padding: .5rem 0; margin-left: .5rem;
+        }
+        span {
+          display: block;
+          font-size: 1.4rem;
+          color:$color2;
+          margin-left: .5rem;
+        }
+        
+      }
+    }
+  }
+}
+
+
+
+
 .popup {
   top: 0;
   left: 0;
@@ -618,26 +682,36 @@ main {
   @include layoutPC();
 }
 
-@include desktopToLaptop {
-  @include layoutPC($col:20rem); 
+@include desktopToLaptop {  
+  @include layoutPC($col:20rem);   
 }
 
 @include laptopTotablet {
+  html { font-size: 9px;};
   @include layoutPC($col:18rem);
 }
 
 @include tablet {
+  html { font-size: 9px;};
+  @include layoutM();
   @include t-dafault(); @include t-t-dafault (); @include t-t-m-dafault ();
   @include t-header(); @include tm-header ();
+  @include m-cont ();
 }
 
-@include tabletToMobile  {  
+@include tabletToMobile  {
+  @include layoutM($padg1:0, $padg2: 7rem 3rem, $bdn:none);
   @include tm-dafault(); @include t-t-m-dafault (); @include t-m-dafault();
   @include t-header(); @include tm-header ();
+  @include m-cont ();
 }
 
 @include mobile  {
+  html { font-size: 9px;};
+  @include layoutM($padg1:0, $padg2:6rem 2rem, $bdn:none);
   @include m-dafault(); @include t-m-dafault(); @include t-t-m-dafault ();
   @include m-header(); @include tm-header ();
+  @include m-cont ();
+  
   
 }

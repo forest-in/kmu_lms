@@ -47,11 +47,6 @@
     @content;
   }
 } 
-@mixin laptopTotablet {
-  @media (min-width: #{$laptop}) and (max-width: #{$desktopToLaptop - 1px}) {
-    @content;
-  }
-} 
 @mixin desktopToLaptop {
   @media (min-width: #{$desktopToLaptop}) and (max-width: #{$desktop - 1px}) {
     @content;
@@ -73,6 +68,18 @@
     }
     main {      
       margin-left:1.5rem;
+    }
+  }
+}
+@mixin layoutM($padg1: 3rem 2rem, $padg2: 7rem 5rem, $bdn:.1rem solid #ededed) {
+  .container {
+    padding: $padg1;    
+    aside {
+      display: none;
+    }
+    main {      
+      padding: $padg2;
+      border: $bdn;
     }
   }
 }
@@ -147,4 +154,66 @@
     }
   }
   
+}
+
+
+@mixin m-cont () {
+  main {
+    $lg:4rem;
+    select, input:not([type=radio]):not([type=checkbox]) {
+      height:$lg; line-height: $lg; 
+
+    }
+    button {height:$lg;}
+    section h1.tit {
+      text-align:center;
+    } 
+  }
+  
+  .board-box {
+    .search-box {
+      justify-content: center;
+      .search-type {
+        input {width:21rem;}
+        .item-date .dp__input {
+          padding-left:3.5rem;
+          font-size: 1.4rem;
+          letter-spacing:-.1rem;
+        }
+      } 
+    }
+    .search-txt {text-align:center;}
+    &.board-list {
+      table { 
+        margin-top:nth($size, 6); 
+        td button {
+          padding:0 .8rem;
+        }
+      }
+      
+      .pagination {margin-top:12rem;}
+    }
+    &.board-view {
+      .ta { 
+        margin-top: nth($size, 6);
+      }      
+    }
+    &.board-write {
+      table {
+        margin-top:nth($size, 6);
+        .chk + input {width:calc(100% - nth($size, 4))}
+      }
+    }
+    .ea {
+      select, button {
+        min-width:10rem;
+      }
+    }
+    
+  } 
+
+  
+    
+
+    
 }

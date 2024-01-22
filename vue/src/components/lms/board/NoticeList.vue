@@ -5,7 +5,7 @@
       <div class="board-box board-list tc">            
         <form id="search" name="search" action="" method="">
           <div class="search-box flex__e__m">            
-            <select name="" id="" v-model="selectedValue">
+            <select name="" id="" v-model="selectedValue" class="m-non">
               <option value="title" selected>제목</option>
               <option value="date">등록일</option>
               <option value="school">학교</option>
@@ -17,13 +17,13 @@
               <div class="fl">
                 <input type="text" placeholder="검색어를 입력해주세요." title="검색 내용 입력">                
               </div>
-              <button class="mgl10 inline-t fr"><span class="material-symbols-outlined">search</span></button>
+              <button class="mgl10 inline-t fr"><span class="material-symbols-outlined inline-m">search</span></button>
             </div>   
           </div>
         </form>
         <div class="search-txt tl mgt10">총 <strong class="cl1">5</strong>개의 게시글이 있습니다.</div>
-        <table>
-          <colgroup>
+        <table>          
+          <colgroup v-if="!isMobile">
             <col style="width:7%;">
             <col style="width:7%;">
             <col style="width:50%;">
@@ -31,34 +31,39 @@
             <col style="width:10%;">
             <col style="width:10%;">
           </colgroup>
+          <colgroup  v-if="isMobile"><!-- 모바일 버전 -->
+            <col style="width:60%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+          </colgroup>
           <tr>
-            <th>선택</th>
-            <th>번호</th>
+            <th class="m-non t-m-non">선택</th>
+            <th class="m-non t-m-non">번호</th>
             <th>제목</th>
             <th>학교명</th>
             <th>작성일</th>
-            <th>조회수</th>
+            <th class="m-non t-m-non">조회수</th>
           </tr>
           <tr>
-            <td><label class="chk"><input type="checkbox"><i></i></label></td>
-            <td class="num">2</td>
+            <td class="m-non t-m-non"><label class="chk"><input type="checkbox"><i></i></label></td>
+            <td class="num m-non t-m-non">2</td>
             <td class="tl tit">
               <router-link to="/lms/notice/view">2024년 1월 신설된 강의 목록입니다.</router-link>
               <span class="material-symbols-outlined">attach_file</span>
             </td>
             <td class="cl1 bold">국민대학교</td>
             <td class="num">2024.01.01</td>
-            <td class="num">112</td>
+            <td class="num m-non t-m-non">112</td>
           </tr>
           <tr>
-            <td><label class="chk"><input type="checkbox"><i></i></label></td>
-            <td class="num">1</td>
+            <td class="m-non t-m-non"><label class="chk"><input type="checkbox"><i></i></label></td>
+            <td class="num m-non t-m-non">1</td>
             <td class="tl tit">
               <router-link to="/lms/notice/view">2024년 1월 신설된 강의 목록입니다.2024년 1월 신설된 강의 목록입니다.2024년 1월 신설된 강의 목록입니다.2024년 1월 신설된 강의 목록입니다.</router-link>
             </td>
             <td class="cl1 bold">한국어대학교 서울캠퍼스</td>
             <td class="num">2024.01.01</td>
-            <td class="num">112</td>
+            <td class="num m-non t-m-non">112</td>
           </tr>
           <!-- <tr>
             <td colspan="7" class="empty">등록된 게시글이 없습니다.</td>                
@@ -66,7 +71,7 @@
         </table>
         <div class="ea flex__d__m">
           <div class="la flex__s__m">
-            <button @click="openPopup('popupDel-2')" type="button" class="ty2">삭제</button>
+            <button @click="openPopup('popupDel-2')" type="button" class="ty2 t-m-non m-non">삭제</button>
           </div>
           <div class="ra flex__e__m">
             <button @click="$router.push('/lms/notice/write')">등록</button>
@@ -95,9 +100,9 @@ import { ref, onMounted } from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
-export default{
+export default {
   components: {
-    VueDatePicker
+    VueDatePicker,
   },
   setup() {
     const date = ref([]);
@@ -109,15 +114,40 @@ export default{
     return {
       date,
     };
-  },  
+  },
   data() {
     return {
       selectedValue: 'title',
+      isMobile: false,
     };
-  }
-}
+  },
+  methods: {
+    handleResize() {
+      this.isMobile = this.calculateIsMobile();
+    },
+    calculateIsMobile() {
+      return window.innerWidth <= 720;
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+};
 </script>
 
 <style scoped lang="scss">
 .vue-datapicker { width:auto; }
+@media (max-width: #{$tablet - 1px}) {
+  .board-list {
+    table {      
+      tr {
+        th:nth-child(3)::before {display:none;}
+      }
+    }    
+  }
+}
 </style>
